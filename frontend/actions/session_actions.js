@@ -22,17 +22,17 @@ const receiveErrors = errors => ({
 })
 
 
-const signup = user => dispatch => (
+export const signup = user => dispatch => (
     APIUtil.signup(user).then(user => dispatch(receiveUser(user)),
     errors => dispatch(receiveErrors(errors)))
 )
 
-const login = user => dispatch => (
+export const login = user => dispatch => (
     APIUtil.login(user).then(user => dispatch(receiveUser(user)),
     errors => dispatch(receiveErrors(errors)))
 )
 
-const logout = () => dispatch => (
+export const logout = () => dispatch => (
     APIUtil.logout().then(user => dispatch(logoutUser()),
     errors => dispatch(receiveErrors(errors)))
 )
