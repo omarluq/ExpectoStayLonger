@@ -1,0 +1,80 @@
+   
+
+    .session-div {
+        position: fixed;
+        top: 100px;
+        left: 300px;
+        z-index: 1;
+        width: 160%;
+        height: 100%;
+    }
+
+    .header{
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        border-bottom: solid black thin;
+        padding: 3px;
+        
+    }
+
+    .logOut{
+        background-color: white;
+        color: gray;
+        padding: 20px;
+        font-size: 16px;
+        border: black thin solid;
+        border-radius: 4px;
+    }
+
+    .img{
+        background-image: url(<%= asset_path "landingpage.jpg" %>);
+        width: 100vw;
+        height: 100vh;
+        background-size: cover;
+    }
+
+
+    .dropDownb{
+        background-color: white;
+        color: gray;
+        padding: 20px;
+        font-size: 16px;
+        border: black thin solid;
+        border-radius: 4px;
+    }
+
+    .content{
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropDown{
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropDown:hover .content {display: flex;
+    flex-direction: column;}
+    
+   .session {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       align-content: space-between;
+       border: 1px black solid;
+       border-radius: 20px;
+       background-color: white;
+       max-width: 30%;
+   }
+
+
+   .logo {
+       font-weight: 700;
+       font-size: 25px;
+   }

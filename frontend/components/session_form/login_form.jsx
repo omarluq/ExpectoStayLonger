@@ -31,8 +31,9 @@ class LoginForm extends React.Component {
             const errors = this.props.errors.map((error, i)=> <li key={i}>{error}</li>)
 
         return (
+            <div className="session-div">
             <form className='session' onSubmit={(e)=> this.handleSubmit(e)}>
-                <h4>Login</h4>
+                <h4>Welcome to expectoStayLonger, lets log you in</h4>
                 <label>Email:
                     <input type="text" value={this.state.email} onChange={this.handleChange("email")}/>
                 </label>
@@ -41,7 +42,7 @@ class LoginForm extends React.Component {
                 </label>
                    
                 <button>
-                    Log In
+                    Continue
                 </button>
                 <button onClick={()=>this.demoUser()}>
                     Demo User
@@ -50,6 +51,7 @@ class LoginForm extends React.Component {
                     {errors}
                 </ul>
             </form>
+            </div>
         )
     }
 }
