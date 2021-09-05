@@ -2,6 +2,7 @@ import SignUpFormContainer from "../session_form/singup_form_container";
 import React from "react";
 import LoginFormContainer from "../session_form/login_form_container";
 import { Link } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
 
 // ϟ expectoStayLonger
@@ -16,9 +17,9 @@ const Header = props => {
             <div className="dropDown" >
             <button className="dropDownb"> ≡ </button>
             <div className="content" >
-            <Link to="/signup">Sign up</Link>
+            <Link className="link" to="/signup">Sign up</Link>
             <br />
-            <Link to="/login">Log in</Link>
+            <Link className="link" to="/login">Log in</Link>
             </div>
             </div>
         </div>
@@ -26,7 +27,7 @@ const Header = props => {
 
     const afterLogin = () => (
        <div className="header" >
-           <h1 className="logo">expectoStayLonger</h1>
+           <div className ="logo"> </div>
             <div className="dropDown" >
             <button className="dropDownb"> ≡ </button>
             <div className="content" >
