@@ -32,8 +32,7 @@
         align-content: center;
         justify-content: space-between;
         flex-wrap: wrap;
-        <%# border-bottom: solid black thin; %>
-        padding: 3px;
+      
         background-color: transparent;
         z-index: 1;
     }
@@ -55,6 +54,8 @@
         position: relative;
         top: -100px;
         z-index: -1;
+        background-position-x: left;
+        background-position-y: top;
     }
 
 
@@ -85,16 +86,29 @@
         display: inline-block;
     }
 
-    .dropDown:hover .content {display: flex;
-    flex-direction: column;}
+    .dropDown:hover .content {
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        position: fixed;
+        right: 20px;
+        top: 70px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
     
  
 
 
 
    .logo {
-       font-weight: 700;
-       font-size: 25px;
-       padding: 20px;
-       font-family: hp;
+       display: flex;
+       background-image: url(<%= asset_path "logo2.png" %>);
+       background-repeat: no-repeat;
+       width: 490px;
+       height: 100px;
+       z-index: 2; 
+       margin-left: 10px;
+  
    }

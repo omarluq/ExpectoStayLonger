@@ -4,16 +4,20 @@ import LoginFormContainer from "../session_form/login_form_container";
 import { Link } from 'react-router-dom';
 
 
+// ϟ expectoStayLonger
+
+
 const Header = props => {
     
 
     const beforeLogin = () => (
         <div className="header" >
-            <h1 className ="logo"> ϟ expectoStayLonger</h1>
+            <div className ="logo"> </div>
             <div className="dropDown" >
             <button className="dropDownb"> ≡ </button>
             <div className="content" >
             <Link to="/signup">Sign up</Link>
+            <br />
             <Link to="/login">Log in</Link>
             </div>
             </div>
