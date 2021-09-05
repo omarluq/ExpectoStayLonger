@@ -34,19 +34,23 @@ class LoginForm extends React.Component {
             <div className="session-div">
             <form className='session' onSubmit={(e)=> this.handleSubmit(e)}>
                 <h4>Welcome to expectoStayLonger, lets log you in</h4>
+                <br />
                 <label>Email:
                     <input type="text" value={this.state.email} onChange={this.handleChange("email")}/>
                 </label>
+                <br />
                 <label>Password:
                     <input type="password" value={this.state.password} onChange={this.handleChange("password")}/>
                 </label>
-                   
+                   <br />
                 <button>
                     Continue
                 </button>
+                <br />
                 <button onClick={()=>this.demoUser()}>
                     Demo User
                 </button>
+                <br />
                 <ul>
                     {errors}
                 </ul>

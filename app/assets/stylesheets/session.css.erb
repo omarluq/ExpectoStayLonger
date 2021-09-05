@@ -1,22 +1,41 @@
-   
+    @font-face {
+    font-family: "hp"
+    src: asset-url("fonts/HARRYP__.TTF") format("truetype");
+    }
 
     .session-div {
-        position: fixed;
-        top: 100px;
-        left: 300px;
-        z-index: 1;
+        z-index: 2000;
         width: 160%;
-        height: 100%;
+        height: 50%;
+        position: fixed;
+        top: 30%;
+        left: 35%;
     }
+
+      .session {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: space-around;
+       border: 1px black solid;
+       border-radius: 20px;
+       background-color: white;
+       max-width: 20%;
+       background-color: white;
+       padding: 5px;
+       margin: 2px;
+       flex-wrap: wrap;
+   }
 
     .header{
         display: flex;
         align-content: center;
         justify-content: space-between;
         flex-wrap: wrap;
-        border-bottom: solid black thin;
+        <%# border-bottom: solid black thin; %>
         padding: 3px;
-        
+        background-color: transparent;
+        z-index: 1;
     }
 
     .logOut{
@@ -31,18 +50,25 @@
     .img{
         background-image: url(<%= asset_path "landingpage.jpg" %>);
         width: 100vw;
-        height: 100vh;
+        height: 90vh;
         background-size: cover;
+        position: relative;
+        top: -100px;
+        z-index: -1;
     }
 
 
     .dropDownb{
-        background-color: white;
+        background-color: transparent;
         color: gray;
-        padding: 20px;
+        padding: 6px;
+        width: 80px;
+        height: 40px;
+        margin: 20px;
         font-size: 16px;
         border: black thin solid;
-        border-radius: 4px;
+        border-radius: 25px;
+
     }
 
     .content{
@@ -62,19 +88,13 @@
     .dropDown:hover .content {display: flex;
     flex-direction: column;}
     
-   .session {
-       display: flex;
-       flex-direction: column;
-       align-items: center;
-       align-content: space-between;
-       border: 1px black solid;
-       border-radius: 20px;
-       background-color: white;
-       max-width: 30%;
-   }
+ 
+
 
 
    .logo {
        font-weight: 700;
        font-size: 25px;
+       padding: 20px;
+       font-family: hp;
    }

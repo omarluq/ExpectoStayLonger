@@ -12,8 +12,10 @@ const App = (props) => {
 
     return (
         <>
-        <HeaderContainer></HeaderContainer>
-        <LandingPageContainer></LandingPageContainer>
+        
+          <LandingPageContainer>
+          </LandingPageContainer>
+        
         {/* <Route exact path ="/" component={LandingPageContainer}/> */}
         <AuthRoute exact path ="/login" component = {LoginFormContainer}/>
         <AuthRoute exact path ="/signup" component = {SignupFormContainer} />

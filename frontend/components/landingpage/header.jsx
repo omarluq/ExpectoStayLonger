@@ -9,7 +9,7 @@ const Header = props => {
 
     const beforeLogin = () => (
         <div className="header" >
-            <h1 className ="logo">expectoStayLonger</h1>
+            <h1 className ="logo"> ϟ expectoStayLonger</h1>
             <div className="dropDown" >
             <button className="dropDownb"> ≡ </button>
             <div className="content" >
