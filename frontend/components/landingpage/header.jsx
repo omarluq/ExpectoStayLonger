@@ -33,6 +33,7 @@ const Header = props => {
             <div className="dropDown" >
             <button className="dropDownb"> <MenuIcon/> <AccountCircleIcon/>  </button>
             <div className="content" >
+            <Link className="link" to={`/user/${props.session.id}`}> Profile </Link>
             <a className="link" onClick = {()=> props.logout()}> Logout </a>
             </div>
             </div>

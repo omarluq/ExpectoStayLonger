@@ -31,6 +31,7 @@ class LoginForm extends React.Component {
             const errors = this.props.errors.map((error, i)=> <li key={i}>{error}</li>)
 
         return (
+        
             <div className="session-div">
             <form className='session' onSubmit={(e)=> this.handleSubmit(e)}>
                 <h4>Welcome to expectoStayLonger, lets log you in</h4>
