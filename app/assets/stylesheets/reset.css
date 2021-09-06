@@ -37,8 +37,6 @@ time, mark, audio, video {
     font-family: helvetica;
     text-decoration: none;
     color: black;
-    /* padding-left: 15px;
-    padding-left: 15px; */
     padding: 7px 15px 7px 15px;
 
 }
@@ -46,7 +44,7 @@ time, mark, audio, video {
 button{
     cursor: pointer;
     border-radius: 7px;
-    border: transparent;
+    border: 0.5px solid black;
     background-color: teal;
     width: 150px;
     height: 30px;

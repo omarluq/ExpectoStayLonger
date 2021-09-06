@@ -1,0 +1,1 @@
+json.extract! listing, :id, :title, :description, :street_address, :city, :country, :postcode, :price, :num_of_beds, :house_elf, :owl_friendly
