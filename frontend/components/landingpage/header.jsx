@@ -3,6 +3,8 @@ import React from "react";
 import LoginFormContainer from "../session_form/login_form_container";
 import { Link } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import MenuIcon from '@material-ui/icons/Menu';
 
 
 // ϟ expectoStayLonger
@@ -15,11 +17,11 @@ const Header = props => {
         <div className="header" >
             <div className ="logo"> </div>
             <div className="dropDown" >
-            <button className="dropDownb"> ≡ </button>
+            <button className="dropDownb"> <MenuIcon/> <AccountCircleIcon/>  </button>
             <div className="content" >
-            <Link className="link" to="/signup">Sign up</Link>
+                <Link className="link" to="/login">Log in</Link>
             <br />
-            <Link className="link" to="/login">Log in</Link>
+                <Link className="link" to="/signup">Sign up</Link>
             </div>
             </div>
         </div>
@@ -29,9 +31,9 @@ const Header = props => {
        <div className="header" >
            <div className ="logo"> </div>
             <div className="dropDown" >
-            <button className="dropDownb"> ≡ </button>
+            <button className="dropDownb"> <MenuIcon/> <AccountCircleIcon/>  </button>
             <div className="content" >
-            <a onClick = {()=> props.logout()}> Logout </a>
+            <a className="link" onClick = {()=> props.logout()}> Logout </a>
             </div>
             </div>
        </div>

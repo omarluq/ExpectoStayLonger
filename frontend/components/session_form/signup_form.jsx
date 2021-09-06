@@ -33,21 +33,13 @@ class SignUpForm extends React.Component {
             <form className='session' onSubmit={(e)=> this.handleSubmit(e)}>
                 <h4>Welcome to expectoStayLonger, let sign you up</h4>
                 <br />
-                <label>Email:   
-                    <input type="text" value={this.state.email} onChange={this.handleChange("email")}/>
-                </label>
+                    <input type="text" value={this.state.email} onChange={this.handleChange("email")} placeholder="Email" className="input"/>
                 <br />
-                <label>Name: 
-                    <input type="text" value={this.state.name} onChange={this.handleChange("name")}/>
-                </label>
+                    <input type="text" value={this.state.name} onChange={this.handleChange("name")} placeholder="Name" className="input"/>
                 <br />
-                <label>Bio:
-                    <textarea value={this.state.bio} onChange={this.handleChange("bio")}/>
-                </label>
+                    <textarea value={this.state.bio} onChange={this.handleChange("bio")} placeholder="Bio" className="input"/>
                 <br />
-                <label>Password:
-                    <input type="password" value={this.state.password} onChange={this.handleChange("password")}/>
-                </label>
+                    <input type="password" value={this.state.password} onChange={this.handleChange("password")} placeholder="Password" className="input"/>
                 <br />
                 <button>
                     Continue

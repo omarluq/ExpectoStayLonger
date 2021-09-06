@@ -35,14 +35,10 @@ class LoginForm extends React.Component {
             <form className='session' onSubmit={(e)=> this.handleSubmit(e)}>
                 <h4>Welcome to expectoStayLonger, lets log you in</h4>
                 <br />
-                <label>Email:
-                    <input type="text" value={this.state.email} onChange={this.handleChange("email")}/>
-                </label>
+                    <input type="text" value={this.state.email} onChange={this.handleChange("email")} placeholder="Email" className="input"/>
                 <br />
-                <label>Password:
-                    <input type="password" value={this.state.password} onChange={this.handleChange("password")}/>
-                </label>
-                   <br />
+                    <input type="password" value={this.state.password} onChange={this.handleChange("password")} placeholder="Password" className="input"/>
+                <br />
                 <button>
                     Continue
                 </button>

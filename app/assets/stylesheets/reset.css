@@ -37,6 +37,10 @@ time, mark, audio, video {
     font-family: helvetica;
     text-decoration: none;
     color: black;
+    /* padding-left: 15px;
+    padding-left: 15px; */
+    padding: 7px 15px 7px 15px;
+
 }
 
 button{
