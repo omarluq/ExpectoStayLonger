@@ -2,9 +2,9 @@
 import * as listingApi from "../util/listings_api_util"
 
 
-const RECEIVE_LISTINGS = "RECEIVE_LISTINGS"
-const RECEIVE_LISTING = "RECEIVE_LISTING"
-const REMOVE_LISTING = "REMOVE_LISTING"
+export const RECEIVE_LISTINGS = "RECEIVE_LISTINGS"
+export const RECEIVE_LISTING = "RECEIVE_LISTING"
+export const REMOVE_LISTING = "REMOVE_LISTING"
 
 
 

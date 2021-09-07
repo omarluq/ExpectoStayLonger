@@ -7,7 +7,10 @@ const ListingItem = props => {
 
 
     return (
-        null
+        <li>
+            {props.listing.title}
+            {props.listing.price}
+        </li>
     )
 }
 

@@ -5,7 +5,7 @@ import {RECEIVE_LISTINGS, RECEIVE_LISTING, REMOVE_LISTING} from "../actions/list
 const listingsReducer = (state = {}, action)=>{
     switch(action.type){
         case RECEIVE_LISTINGS:
-            return {...state, ...action.listings}
+            return  action.listings
         case RECEIVE_LISTING:
             return {...state, [action.listing.id]: action.listing}
         case REMOVE_LISTING:

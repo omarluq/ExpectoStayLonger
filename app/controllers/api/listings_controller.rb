@@ -35,11 +35,12 @@ class Api::ListingsController < ApplicationController
     def index 
         @listings = Listing.all
         if params[:city]
-            @listings = @listing.where(city: params[:city])
+            @listings = Listing.where(city: params[:city])
+            render :index
         else 
-            @listings
+            render :index
         end
-        render :index
+        
     end
 
     private 

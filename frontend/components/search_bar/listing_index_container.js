@@ -6,9 +6,8 @@ import { withRouter } from 'react-router'
 
 
 const mapSTP = (state) => {
-    debugger
     return {
-    listings: state.listings
+    listings: Object.values(state.listings)
 }}
 
 
