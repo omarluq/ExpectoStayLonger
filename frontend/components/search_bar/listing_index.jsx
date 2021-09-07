@@ -18,16 +18,14 @@ class ListingIndex extends React.Component {
 
 
     render(){
-        // if (!this.props.listings) return null
-        debugger
         let listings = this.props.listings.map(listing=> <ListingItem listing={listing} />)
         return (
-            <>
-            <h1>Welcome to listings</h1>
-            <ul>
+            <div className="stays">
+                <h4 className="wizarding">Stays in the wizarding world</h4>
+            <ul className="listings">
                 {listings}
             </ul>
-            </>
+            </div>
         )
     }
 
