@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store'
 import Root from "./components/root"
 import {fetchListings} from "./actions/listing_actions"
+import Header from './components/landingpage/header';
 
 document.addEventListener("DOMContentLoaded", ()=>{
     let store;
@@ -21,4 +22,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
     window.fetchListings = fetchListings
     let root = document.getElementById('root')
     ReactDOM.render(<Root store = {store}/>, root)
+
+   
 })
