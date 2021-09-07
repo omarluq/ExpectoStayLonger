@@ -98,9 +98,11 @@
 
 
     #mapContainer {
+        position: fixed;
+        right: 0;
         width: 50vw;
-        height: 100vh;
-        margin: 70px;
+        height: 75vh;
+        margin-top: 100px;
     }
 
 
@@ -235,6 +237,9 @@
     .listings{
         display: flex;
         flex-direction: column;
+        padding: 15px;
+        margin: 25px;
+        overflow-y: scroll;
     }
 
      .indlisting{
@@ -249,9 +254,7 @@
      }
 
      .stays {
-         margin: 20px;
          display: flex;
-         padding: 15px;
          flex-direction: row;
          flex-wrap: wrap;
          justify-content: space-between;

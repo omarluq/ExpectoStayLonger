@@ -14,7 +14,7 @@ const Map =() => {
           container: "mapContainer",
           style: "mapbox://styles/mapbox/streets-v11",
           center: [-74.5, 40],
-          zoom: 3,
+          zoom: 13,
         });
       }, []);
 
