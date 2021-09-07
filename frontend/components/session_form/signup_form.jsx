@@ -1,5 +1,7 @@
 
 import React from 'react';
+import {Link} from 'react-router-dom'
+
 
 
 class SignUpForm extends React.Component {
@@ -25,14 +27,14 @@ class SignUpForm extends React.Component {
 
 
     render(){
-            const errors = this.props.errors.map((error, i)=> <li key={i}>{error}</li>)
+            const errors = this.props.errors.map((error, i)=> <li className="errors" key={i}>{error}</li>)
 
         return (
             
             <div className="session-div">
                 <br />
             <form className='session' onSubmit={(e)=> this.handleSubmit(e)}>
-                <h4>Welcome to expectoStayLonger, lets sign you up</h4>
+                <h4 className="welcome">Welcome to expectoStayLonger, lets sign you up</h4>
                 <br />
                     <input type="text" value={this.state.email} onChange={this.handleChange("email")} placeholder="Email" className="input"/>
                 <br />
@@ -42,13 +44,14 @@ class SignUpForm extends React.Component {
                 <br />
                     <input type="password" value={this.state.password} onChange={this.handleChange("password")} placeholder="Password" className="input"/>
                 <br />
-                <button>
+                <button className="sessionb">
                     Continue
                 </button>
                 <br />
                 <ul>
                     {errors}
                 </ul>
+                <p className='bottoms'>Already a user? <Link to="/login">Brilliant!</Link></p>
             </form>
             </div>
         )
