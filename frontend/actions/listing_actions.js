@@ -24,8 +24,8 @@ const removeListing = listingId => ({
 })
 
 
-export const fetchListings = () => dispatch => (
-    listingApi.fetchListings().then(listings => dispatch(receiveListings(listings)))
+export const fetchListings = (city) => dispatch => (
+    listingApi.fetchListings(city).then(listings => dispatch(receiveListings(listings)))
 )
 
 export const fetchListing = listingId => dispatch => (

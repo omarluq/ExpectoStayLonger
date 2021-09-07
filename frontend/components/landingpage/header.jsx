@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 import { NavLink } from "react-router-dom";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import MenuIcon from '@material-ui/icons/Menu';
-
-
-// ϟ expectoStayLonger
+import SearchBar from "../search_bar/search_bar";
 
 
 const Header = props => {
@@ -16,6 +14,7 @@ const Header = props => {
     const beforeLogin = () => (
         <div className="header" >
             <div className ="logo"> </div>
+            <SearchBar />
             <div className="dropDown" >
             <button className="dropDownb"> <MenuIcon/> <AccountCircleIcon/>  </button>
             <div className="content" >
@@ -30,6 +29,7 @@ const Header = props => {
     const afterLogin = () => (
        <div className="header" >
            <div className ="logo"> </div>
+            <SearchBar />
             <div className="dropDown" >
             <button className="dropDownb"> <MenuIcon/> <AccountCircleIcon/>  </button>
             <div className="content" >
