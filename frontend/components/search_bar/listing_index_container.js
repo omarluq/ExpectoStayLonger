@@ -5,6 +5,8 @@ import ListingIndex from './listing_index'
 import { withRouter } from 'react-router'
 
 
+
+
 const mapSTP = (state) => {
     return {
     listings: Object.values(state.listings)

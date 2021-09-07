@@ -9,11 +9,16 @@ import SearchBar from "../search_bar/search_bar";
 
 
 const Header = props => {
+
+
+   
     
 
     const beforeLogin = () => (
         <div className="header" >
-            <div className ="logo"> </div>
+            <Link to="/">
+            <div className ="logo"  > </div>
+            </Link> 
             <SearchBar />
             <div className="dropDown" >
             <button className="dropDownb"> <MenuIcon/> <AccountCircleIcon/>  </button>
@@ -28,7 +33,9 @@ const Header = props => {
 
     const afterLogin = () => (
        <div className="header" >
-           <div className ="logo"> </div>
+            <Link to="/">
+            <div className ="logo"  > </div>
+            </Link> 
             <SearchBar />
             <div className="dropDown" >
             <button className="dropDownb"> <MenuIcon/> <AccountCircleIcon/>  </button>

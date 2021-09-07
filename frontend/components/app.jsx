@@ -8,6 +8,7 @@ import LandingPageContainer from "./landingpage/landing_page_container";
 import UserShowContainer from "./user/user_show_container";
 import HeaderConatiner from './landingpage/header_container';
 import ListingIndexContainer from "./search_bar/listing_index_container";
+import ListingShow from "./listing_show/listing_show_container";
 
 
 
@@ -20,6 +21,7 @@ const App = (props) => {
         <Route exact path = "/listings/:city" component={ListingIndexContainer}/>
         <Route exact path = "/listings/" component={ListingIndexContainer}/>
         <Route exact path ="/" component={LandingPageContainer}/>
+        <Route exact path ="/listing/:listingId" component={ListingShow}/>
         <ProtectedRoute exact path ="/user/:userId" component= {UserShowContainer}/>
         <AuthRoute exact path ="/login" component = {LoginFormContainer}/>
         <AuthRoute exact path ="/signup" component = {SignupFormContainer} />
