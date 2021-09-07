@@ -8,7 +8,7 @@ const ListingItem = props => {
 
     return (
         <li className="indlisting">
-            <Link to={`/listing/${props.listing.id}`}>
+            <Link className="link" to={`/listing/${props.listing.id}`}>
             <h4>{props.listing.title}</h4>
             </Link>
             <p>{props.listing.description}</p>

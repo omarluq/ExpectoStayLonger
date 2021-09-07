@@ -1,6 +1,7 @@
 import { ThumbUpSharp } from '@material-ui/icons'
 import React from 'react'
 import ListingItem from './listing_index_item'
+import Map from './map'
 
 
 
@@ -8,6 +9,7 @@ class ListingIndex extends React.Component {
 
     constructor(props){
         super(props)
+        
     }
 
 
@@ -18,13 +20,16 @@ class ListingIndex extends React.Component {
 
 
     render(){
+
         let listings = this.props.listings.map(listing=> <ListingItem listing={listing} />)
         return (
-            <div className="stays">
+            <div className="stays" id="stays">
+                
+                <ul className="listings">
                 <h4 className="wizarding">Stays in the wizarding world</h4>
-            <ul className="listings">
-                {listings}
-            </ul>
+                    {listings}
+                </ul>
+                < Map />
             </div>
         )
     }

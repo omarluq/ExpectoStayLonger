@@ -1,8 +1,5 @@
-import SignUpFormContainer from "../session_form/singup_form_container";
 import React from "react";
-import LoginFormContainer from "../session_form/login_form_container";
 import { Link } from 'react-router-dom';
-import { NavLink } from "react-router-dom";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchBar from "../search_bar/search_bar";
