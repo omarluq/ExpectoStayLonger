@@ -27,6 +27,7 @@ class NewListing extends React.Component {
     }
 
     handleSubmit(e){
+        e.preventDefault()
         mapboxgl.accessToken = 'pk.eyJ1Ijoib21hcmx1cSIsImEiOiJja3RhOGt0N3UxanE2MnduMWNsNW9lMXdnIn0.EmKLSdfjJDUYIIW8wieFLw';
         const geocoder = mbxGeocoding({
             accessToken: mapboxgl.accessToken
@@ -36,18 +37,14 @@ class NewListing extends React.Component {
             query: `${this.state.street_address}, ${this.state.city}`,
             limit: 1
         }).send().then((response)=>{
+            this.setState({host_id: this.props.session.id})  
             this.setState({longitude: response.body.features[0].center[0], latitude: response.body.features[0].center[1]})
             this.props.createListing(this.state).then(res=>{
                                                                 this.props.history.location.pathname = `/`
                                                                 this.props.history.replace(`/listing/${res.listing.id}`)
                                                             }
             )
-            // this.props.history.location.pathname = "/"
-            // `user/${this.props.session.id}`
-        })
-        e.preventDefault()
-        this.setState({host_id: this.props.session.id})
-        
+        })   
     }
 
 
