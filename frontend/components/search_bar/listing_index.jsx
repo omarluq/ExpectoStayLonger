@@ -21,7 +21,7 @@ class ListingIndex extends React.Component {
 
     render(){
 
-        let listings = this.props.listings.map(listing=> <ListingItem listing={listing} />)
+        let listings = this.props.listings.map((listing, i)=> <ListingItem key={`${listing.title}${i}`} listing={listing} />)
         return (
             <div className="stays" id="stays">
                 
