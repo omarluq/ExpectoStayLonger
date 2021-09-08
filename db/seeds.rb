@@ -47,8 +47,8 @@ listing1 = Listing.create!(
     num_of_beds: 20,
     house_elf: true,
     owl_friendly: true,
-    longitude: 118.2437,
-    latitude: -1.310600
+    longitude: 1.3129,
+    latitude: 53.1921
 )
 
 
@@ -64,8 +64,8 @@ listing2 = Listing.create!(
     num_of_beds: 1,
     house_elf: true,
     owl_friendly: true,
-    longitude: -76.815290,
-    latitude: 40.156250
+    longitude: -0.753980,
+    latitude: 51.416039
 )
 
 
