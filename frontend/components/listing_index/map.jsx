@@ -1,6 +1,7 @@
 import mapboxgl from '!mapbox-gl'
 import React from 'react'
 import { withRouter } from 'react-router'
+import { Link } from 'react-router-dom'
 
 
 
@@ -29,25 +30,34 @@ class Map extends React.Component {
   }
 
   componentDidUpdate(){
+
+    
     
     this.props.listings.forEach(listing=> 
                                         new mapboxgl.Marker().setLngLat([listing.longitude, listing.latitude]).addTo(this.map)
-                                        .setPopup(new mapboxgl.Popup().setHTML(`<div> 
-                                                                                  <h4>
-                                                                                  ${listing.title}
-                                                                                  </h4>
-                                                                                  <p>
-                                                                                  ${listing.description}
-                                                                                  </p>
-                                                                                  </div>`)))
+                                        .setPopup(new mapboxgl.Popup().setHTML(this.marker(listing))))
   }
 
+  marker(listing) {
+    return (
+      
+      `<div> 
+      <h4>
+        ${listing.title}
+      </h4>
+      <p>
+      ${listing.price} galleons/night
+      </p>
+      </div>`
+    )
+  }
   
 
 
 
   render(){
     return <div id="mapContainer" ></div>;
+    
   }
    
 
