@@ -2,12 +2,10 @@
 
     .session-div {
         z-index: 2000;
-        width: 160%;
-        height: 50%;
-        position: fixed;
-        top: 30%;
-        left: 35%;
+        width: 100vw;
+        height: 100vh;
         display: flex;
+        justify-content: center;
 
     }
 
@@ -19,9 +17,12 @@
        border-radius: 20px;
        background-color: white;
        width: 500px;
+       min-width: 500px;
        background-color: white;
-       flex-wrap: wrap;
        box-shadow: 0 3px 20px rgba(0,0,0, 0.5);
+       height: 400px;
+       min-height: 400px;
+       margin-top: 10%;
    }
 
    .bottoms{
@@ -51,7 +52,6 @@
         display: flex;
         align-content: center;
         justify-content: space-between;
-        flex-wrap: wrap;
         position: sticky;
         top: 0;
         background-color: transparent;
@@ -62,7 +62,6 @@
         display: flex;
         align-content: center;
         justify-content: space-between;
-        flex-wrap: wrap;
         position: sticky;
         top: 0;
         background-color: white;
