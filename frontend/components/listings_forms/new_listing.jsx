@@ -15,8 +15,13 @@ class NewListing extends React.Component {
 
 
     handleChange(field){
-       return (e) => 
-        this.setState({[field]: e.target.value})
+        
+       return (e) => {
+        let value = e.target.value
+       if (field === "price" || field === "num_of_beds") {
+            value = parseInt(e.target.value)
+       }
+        this.setState({[field]: value})}
     }
 
     handleSubmit(e){
@@ -25,13 +30,17 @@ class NewListing extends React.Component {
             accessToken: mapboxgl.accessToken
         });
 
-        let getGioCode = geocoder.forwardGeocode({
+        geocoder.forwardGeocode({
             query: `${this.state.street_address}, ${this.state.city}`,
             limit: 1
+        }).send().then((response)=>{
+            this.setState({longitude: response.body.features[0].center[0], latitude: response.body.features[0].center[1]})
+            console.log(this.state);
+            // this.props.createListing(this.state) 
         })
         e.preventDefault()
         this.setState({host_id: this.props.session.id})
-        this.props.createListing(this.state)
+        
     }
 
 
