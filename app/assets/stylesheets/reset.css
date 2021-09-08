@@ -49,6 +49,7 @@ button{
     background-color: teal;
     width: 150px;
     height: 30px;
+    box-shadow: 0 3px 20px rgba(0,0,0, 0.2);
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
