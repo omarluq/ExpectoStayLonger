@@ -7,7 +7,7 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util"
 import LandingPageContainer from "./landingpage/landing_page_container";
 import UserShowContainer from "./user/user_show_container";
 import HeaderConatiner from './landingpage/header_container';
-import ListingIndexContainer from "./search_bar/listing_index_container";
+import ListingIndexContainer from "./listing_index/listing_index_container";
 import ListingShow from "./listing_show/listing_show_container";
 import NewListingContainer from "./listings_forms/new_listing_container";
 

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import MenuIcon from '@material-ui/icons/Menu';
-import SearchBar from "../search_bar/search_bar";
+import SearchBar from "../listing_index/search_bar";
 
 
 class Header extends React.Component  {
