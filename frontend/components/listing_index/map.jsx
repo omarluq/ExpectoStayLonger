@@ -29,8 +29,21 @@ class Map extends React.Component {
   }
 
   componentDidUpdate(){
-    this.props.listings.forEach(listing=> new mapboxgl.Marker().setLngLat([listing.longitude, listing.latitude]).addTo(this.map))
+    
+    this.props.listings.forEach(listing=> 
+                                        new mapboxgl.Marker().setLngLat([listing.longitude, listing.latitude]).addTo(this.map)
+                                        .setPopup(new mapboxgl.Popup().setHTML(`<div> 
+                                                                                  <h4>
+                                                                                  ${listing.title}
+                                                                                  </h4>
+                                                                                  <p>
+                                                                                  ${listing.description}
+                                                                                  </p>
+                                                                                  </div>`)))
   }
+
+  
+
 
 
   render(){
