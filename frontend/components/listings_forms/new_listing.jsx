@@ -37,11 +37,13 @@ class NewListing extends React.Component {
             limit: 1
         }).send().then((response)=>{
             this.setState({longitude: response.body.features[0].center[0], latitude: response.body.features[0].center[1]})
-            console.log(this.state);
-            console.log(this.props);
-            this.props.createListing(this.state) 
-            debugger
-            
+            this.props.createListing(this.state).then(res=>{
+                                                                this.props.history.location.pathname = `/`
+                                                                this.props.history.replace(`/listing/${res.listing.id}`)
+                                                            }
+            )
+            // this.props.history.location.pathname = "/"
+            // `user/${this.props.session.id}`
         })
         e.preventDefault()
         this.setState({host_id: this.props.session.id})
@@ -57,7 +59,7 @@ class NewListing extends React.Component {
             <div className="new-listing-div">
             <form onSubmit={(e)=>this.handleSubmit(e)}>
                 <br className="new-listing-form"/>
-                <h4>Hey! listing a new Magical place?</h4>
+                <h4>Hey! Listing a new Magical place?</h4>
                 <br />
                 <input type="text" value={this.state.title} onChange={this.handleChange('title')} placeholder="title" className="new-listing-form" />
                 <br />
