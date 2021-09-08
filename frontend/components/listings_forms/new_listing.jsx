@@ -20,6 +20,8 @@ class NewListing extends React.Component {
         let value = e.target.value
        if (field === "price" || field === "num_of_beds") {
             value = parseInt(e.target.value)
+       } else if (field === "house_elf" || field === "owl_friendly") {
+            value  = 'true'
        }
         this.setState({[field]: value})}
     }
@@ -36,7 +38,10 @@ class NewListing extends React.Component {
         }).send().then((response)=>{
             this.setState({longitude: response.body.features[0].center[0], latitude: response.body.features[0].center[1]})
             console.log(this.state);
-            // this.props.createListing(this.state) 
+            console.log(this.props);
+            this.props.createListing(this.state) 
+            debugger
+            
         })
         e.preventDefault()
         this.setState({host_id: this.props.session.id})
@@ -70,12 +75,14 @@ class NewListing extends React.Component {
                 <br />
                 <input type="number" value={this.state.num_of_beds} onChange={this.handleChange('num_of_beds')} placeholder="number of beds" className="new-listing-form" />
                 <br />
-                <label> Comes with house elf ?
+                <label> 
                 <input type="checkbox" value={this.state.house_elf} onChange={this.handleChange('house_elf')} className="new-listing-form" />
+                    Comes with house elf
                 </label>
                 <br />
-                <label> Owl friendly?
+                <label> 
                 <input type="checkbox" value={this.state.owl_friendly} onChange={this.handleChange('owl_friendly')} className="new-listing-form" />
+                    Owl friendly
                 </label>
                 <br />
                 <button>Finish</button>
