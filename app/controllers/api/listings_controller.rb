@@ -33,7 +33,6 @@ class Api::ListingsController < ApplicationController
     end
 
     def index 
-        # debugger
         @listings = Listing.all
         if params[:city]
             @listings = Listing.where(city: params[:city])

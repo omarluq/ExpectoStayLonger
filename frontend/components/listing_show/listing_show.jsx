@@ -8,7 +8,6 @@ import React from 'react'
 class ListingShow extends React.Component{
 
     handleDelete(){
-        debugger
         this.props.deleteListing(this.props.match.params.listingId)
         this.props.history.push("/")
     }

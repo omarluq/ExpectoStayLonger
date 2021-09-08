@@ -25,43 +25,12 @@ class NewListing extends React.Component {
             accessToken: mapboxgl.accessToken
         });
 
-
-        // let getGioCode = geocoder.forwardGeocode({
-        //     query: `${this.state.street_address}, ${this.state.city}`,
-        //     limit: 1
-        // }).send().then((response)=>{
-        //     const match = response.body;
-        //     const coordinates = match.features[0].geometry.coordinates;
-        //     const placeName = match.features[0].place_name;
-        //     const center = match.features[0].center
-
-
-        //     return {
-        //     type: 'feature',
-        //     center: center,
-        //     geometry: {
-        //         type: "Point",
-        //         coordinates: coordinates,
-        //     },
-        //     properties: {
-        //         description: placeName,
-        //     }
-        //     }
-        // }, [])
-
-
         let getGioCode = geocoder.forwardGeocode({
             query: `${this.state.street_address}, ${this.state.city}`,
             limit: 1
         })
-
-        
-
-        console.log(getGioCode);
-        debugger
         e.preventDefault()
         this.setState({host_id: this.props.session.id})
-        debugger
         this.props.createListing(this.state)
     }
 
