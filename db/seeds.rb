@@ -42,11 +42,13 @@ listing1 = Listing.create!(
     street_address: 'Doe Lea',
     city: 'Chesterfield',
     country: 'United Kingdom',
-    postcode:  445,
+    postcode:  "S44 5QJ",
     price: 250,
     num_of_beds: 20,
     house_elf: true,
-    owl_friendly: true
+    owl_friendly: true,
+    longitude: 118.2437,
+    latitude: -1.310600
 )
 
 
@@ -54,14 +56,16 @@ listing2 = Listing.create!(
     title: '4 privet drive cupboard under stairs',
     description: 'Small and dusty, with lots of spiders.',
     host_id: 2,
-    street_address: '4 Privet Drive',
-    city: 'Little Whinging',
-    country: 'Surrey',
-    postcode: 445,
+    street_address: '12 Picket Post Close',
+    city: 'Bracknell',
+    country: 'UL',
+    postcode: "RG12 9FG",
     price: 15,
     num_of_beds: 1,
     house_elf: true,
-    owl_friendly: true
+    owl_friendly: true,
+    longitude: -76.815290,
+    latitude: 40.156250
 )
 
 
@@ -73,9 +77,11 @@ listing3 = Listing.create!(
     street_address: '23 Claremont Square',
     city: 'London',
     country: 'United Kingdom',
-    postcode: 19,
+    postcode: "N1 9LX",
     price: 100,
     num_of_beds: 12,
     house_elf: true,
-    owl_friendly: true
+    owl_friendly: true,
+    longitude: -0.110220,
+    latitude: 51.530689
 )

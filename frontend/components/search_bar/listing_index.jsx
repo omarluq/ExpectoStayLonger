@@ -1,7 +1,7 @@
 import { ThumbUpSharp } from '@material-ui/icons'
 import React from 'react'
 import ListingItem from './listing_index_item'
-import Map from './map'
+import MapConatiner from './map_container'
 
 
 
@@ -29,7 +29,9 @@ class ListingIndex extends React.Component {
                 <h4 className="wizarding">Stays in the wizarding world</h4>
                     {listings}
                 </ul>
-                < Map />
+                {/* < Map listings = {this.props.listings} fetchListings = {this.props.fetchListings}/> */}
+                < MapConatiner />
+                
             </div>
         )
     }

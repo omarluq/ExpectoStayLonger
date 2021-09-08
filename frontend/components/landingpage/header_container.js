@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import Header from './header';
 import { logout } from '../../actions/session_actions';
-import {withRouter} from 'react-router'
+import { withRouter } from 'react-router'
 
 
 
