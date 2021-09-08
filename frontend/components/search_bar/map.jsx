@@ -17,6 +17,7 @@ class Map extends React.Component {
 
 
   componentDidMount(){
+
       this.props.fetchListings()
       mapboxgl.accessToken = 'pk.eyJ1Ijoib21hcmx1cSIsImEiOiJja3RhOGt0N3UxanE2MnduMWNsNW9lMXdnIn0.EmKLSdfjJDUYIIW8wieFLw';
       this.map = new mapboxgl.Map({
@@ -25,11 +26,14 @@ class Map extends React.Component {
       center: [0.1278, 51.5074],
       zoom: 7,
     })
-    }
+  }
+
+  componentDidUpdate(){
+    this.props.listings.forEach(listing=> new mapboxgl.Marker().setLngLat([listing.longitude, listing.latitude]).addTo(this.map))
+  }
 
 
   render(){
-    this.props.listings.forEach(listing=> new mapboxgl.Marker().setLngLat([listing.longitude, listing.latitude]).addTo(this.map))
     return <div id="mapContainer" ></div>;
   }
    
