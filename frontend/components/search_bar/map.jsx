@@ -1,8 +1,5 @@
 import mapboxgl from '!mapbox-gl'
-import { AddToHomeScreen } from '@material-ui/icons';
 import React from 'react'
-import { useEffect, useLayoutEffect } from "react";
-import { render } from 'react-dom';
 import { withRouter } from 'react-router'
 
 
@@ -20,8 +17,8 @@ class Map extends React.Component {
 
 
   componentDidMount(){
-     this.props.fetchListings()
-    mapboxgl.accessToken = 'pk.eyJ1Ijoib21hcmx1cSIsImEiOiJja3RhOGt0N3UxanE2MnduMWNsNW9lMXdnIn0.EmKLSdfjJDUYIIW8wieFLw';
+      this.props.fetchListings()
+      mapboxgl.accessToken = 'pk.eyJ1Ijoib21hcmx1cSIsImEiOiJja3RhOGt0N3UxanE2MnduMWNsNW9lMXdnIn0.EmKLSdfjJDUYIIW8wieFLw';
       this.map = new mapboxgl.Map({
       container: "mapContainer",
       style: "mapbox://styles/mapbox/dark-v10",
@@ -31,10 +28,10 @@ class Map extends React.Component {
     }
 
 
-    render(){
+  render(){
     this.props.listings.forEach(listing=> new mapboxgl.Marker().setLngLat([listing.longitude, listing.latitude]).addTo(this.map))
     return <div id="mapContainer" ></div>;
-    }
+  }
    
 
 }
