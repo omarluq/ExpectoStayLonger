@@ -1,4 +1,8 @@
 import React from 'react'
+import mbxGeocoding from '@mapbox/mapbox-sdk/services/geocoding';
+import mapboxgl from '!mapbox-gl'
+
+
 
 class NewListing extends React.Component {
 
@@ -11,13 +15,53 @@ class NewListing extends React.Component {
 
 
     handleChange(field){
-        (e) => 
+       return (e) => 
         this.setState({[field]: e.target.value})
     }
 
     handleSubmit(e){
+        mapboxgl.accessToken = 'pk.eyJ1Ijoib21hcmx1cSIsImEiOiJja3RhOGt0N3UxanE2MnduMWNsNW9lMXdnIn0.EmKLSdfjJDUYIIW8wieFLw';
+        const geocoder = mbxGeocoding({
+            accessToken: mapboxgl.accessToken
+        });
+
+
+        // let getGioCode = geocoder.forwardGeocode({
+        //     query: `${this.state.street_address}, ${this.state.city}`,
+        //     limit: 1
+        // }).send().then((response)=>{
+        //     const match = response.body;
+        //     const coordinates = match.features[0].geometry.coordinates;
+        //     const placeName = match.features[0].place_name;
+        //     const center = match.features[0].center
+
+
+        //     return {
+        //     type: 'feature',
+        //     center: center,
+        //     geometry: {
+        //         type: "Point",
+        //         coordinates: coordinates,
+        //     },
+        //     properties: {
+        //         description: placeName,
+        //     }
+        //     }
+        // }, [])
+
+
+        let getGioCode = geocoder.forwardGeocode({
+            query: `${this.state.street_address}, ${this.state.city}`,
+            limit: 1
+        })
+
+        
+
+        console.log(getGioCode);
+        debugger
         e.preventDefault()
         this.setState({host_id: this.props.session.id})
+        debugger
         this.props.createListing(this.state)
     }
 
@@ -26,8 +70,10 @@ class NewListing extends React.Component {
     render(){
 
         return (
+
+            <div className="new-listing-div">
             <form onSubmit={(e)=>this.handleSubmit(e)}>
-                <br />
+                <br className="new-listing-form"/>
                 <h4>Hey! listing a new Magical place?</h4>
                 <br />
                 <input type="text" value={this.state.title} onChange={this.handleChange('title')} placeholder="title" className="new-listing-form" />
@@ -47,7 +93,7 @@ class NewListing extends React.Component {
                 <input type="number" value={this.state.num_of_beds} onChange={this.handleChange('num_of_beds')} placeholder="number of beds" className="new-listing-form" />
                 <br />
                 <label> Comes with house elf ?
-                <input type="checkbox" value={this.state.house_elf} onChange={this.handleChange('house_elf')}className="new-listing-form" />
+                <input type="checkbox" value={this.state.house_elf} onChange={this.handleChange('house_elf')} className="new-listing-form" />
                 </label>
                 <br />
                 <label> Owl friendly?
@@ -56,6 +102,7 @@ class NewListing extends React.Component {
                 <br />
                 <button>Finish</button>
             </form>
+            </div>
         )
     }
 }

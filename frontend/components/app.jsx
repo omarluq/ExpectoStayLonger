@@ -24,7 +24,7 @@ const App = (props) => {
         <Route exact path ="/" component={LandingPageContainer}/>
         <Route exact path ="/listing/:listingId" component={ListingShow}/>
         <ProtectedRoute exact path ="/user/:userId" component= {UserShowContainer}/>
-        <ProtectedRoute exact path = "/listing/new" component={NewListingContainer}/>
+        <ProtectedRoute exact path = "/new/listing" component={NewListingContainer}/>
         <AuthRoute exact path ="/login" component = {LoginFormContainer}/>
         <AuthRoute exact path ="/signup" component = {SignupFormContainer} />
         </>

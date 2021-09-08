@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import React from 'react'
-import { createListing } from '../../util/listings_api_util'
+import { createListing } from '../../actions/listing_actions'
 import NewListing from './new_listing'
 
 const mapSTP = state => ({
