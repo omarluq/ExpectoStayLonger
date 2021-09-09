@@ -26,12 +26,18 @@ class ListingShow extends React.Component{
             else {
             deleteButton = <div></div>
         }
+        debugger
 
-       
+        console.log(this.props.listing.photo);
+       const reader = new FileReader()
+       reader.onloadend = () => {
+           
+       }
             
 
         return (
             <div>
+            <img src={this.props.listing.photo} width="500" height="500" />
             <h4>{this.props.listing.title}</h4>
             <p>{this.props.listing.description}</p>
             <p>{this.props.listing.street_address}, {this.props.listing.city}, {this.props.listing.country}</p>

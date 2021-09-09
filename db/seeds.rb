@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+require 'open-uri'
 
 user1 = User.create!(
     name: 'richard',
@@ -51,6 +51,8 @@ listing1 = Listing.create!(
     latitude: 53.1921
 )
 
+file1 = open("app/assets/images/malfoymanor1.jpg")
+listing1.photo.attach(io: file1, filename: 'cupboard.jpg')
 
 listing2 = Listing.create!(
     title: '4 privet drive cupboard under stairs',
@@ -67,6 +69,9 @@ listing2 = Listing.create!(
     longitude: -0.753980,
     latitude: 51.416039
 )
+
+file2 = open("app/assets/images/cupboard.jpg")
+listing2.photo.attach(io: file2, filename: 'cupboard.jpg')
 
 
 
@@ -85,3 +90,6 @@ listing3 = Listing.create!(
     longitude: -0.110220,
     latitude: 51.530689
 )
+
+file3 = open("app/assets/images/number12.jpg")
+listing3.photo.attach(io: file3, filename: 'number12.jpg')

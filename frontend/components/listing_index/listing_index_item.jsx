@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom'
 
 
 const ListingItem = props => {
+    debugger
     return (
         <li className="indlisting">
+            <img src={props.listing.photo} width="200" height="200" />
             <Link className="link" to={`/listing/${props.listing.id}`}>
             <h4>{props.listing.title}</h4>
             </Link>
