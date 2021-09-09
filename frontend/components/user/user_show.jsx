@@ -20,7 +20,7 @@ class ShowUser extends React.Component {
                 
                 <h1>Hi, I'm {this.props.user[this.props.match.params.userId].name}</h1>
                 <button>
-                    <Link to="/new/listing" >Add a new listing</Link>
+                    <Link className="user-link" to="/new/listing" >Add a new listing</Link>
                 </button>
 
             </div>
