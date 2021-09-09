@@ -1,7 +1,5 @@
 import mapboxgl from '!mapbox-gl'
 import React from 'react'
-import { withRouter } from 'react-router'
-import { Link } from 'react-router-dom'
 
 
 
@@ -27,12 +25,11 @@ class Map extends React.Component {
       center: [0.1278, 51.5074],
       zoom: 7,
     })
+    const nav = new mapboxgl.NavigationControl()
+    this.map.addControl(nav, 'bottom-right')
   }
 
   componentDidUpdate(){
-
-    
-    
     this.props.listings.forEach(listing=> 
                                         new mapboxgl.Marker().setLngLat([listing.longitude, listing.latitude]).addTo(this.map)
                                         .setPopup(new mapboxgl.Popup().setHTML(this.marker(listing))))
@@ -40,7 +37,7 @@ class Map extends React.Component {
 
   marker(listing) {
     return (
-      
+
       `<div> 
       <h4>
         ${listing.title}
@@ -56,11 +53,10 @@ class Map extends React.Component {
 
 
   render(){
-    return <div id="mapContainer" ></div>;
-    
+    return <div id="mapContainer" ></div>;  
   }
    
 
 }
 
-export default withRouter(Map)
+export default Map

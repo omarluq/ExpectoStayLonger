@@ -40,7 +40,7 @@ class NewListing extends React.Component {
             this.setState({host_id: this.props.session.id})  
             this.setState({longitude: response.body.features[0].center[0], latitude: response.body.features[0].center[1]})
             this.props.createListing(this.state).then(res=>{
-                                                                this.props.history.location.pathname = `/`
+                                                                // this.props.history.location.pathname = `/`
                                                                 this.props.history.replace(`/listing/${res.listing.id}`)
                                                             }
             )

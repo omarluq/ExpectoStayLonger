@@ -6,7 +6,7 @@ import ShowUser from "./user_show"
 
 const mapSTP = state => {
     return {
-    user: state.user
+    user: Object.values(state.user)
 }}
 
 

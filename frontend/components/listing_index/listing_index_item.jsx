@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom'
 
 
 const ListingItem = props => {
-
-
     return (
         <li className="indlisting">
             <Link className="link" to={`/listing/${props.listing.id}`}>
