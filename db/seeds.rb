@@ -52,7 +52,10 @@ listing1 = Listing.create!(
 )
 
 file1 = open("app/assets/images/malfoymanor1.jpg")
-listing1.photo.attach(io: file1, filename: 'cupboard.jpg')
+listing1.photos.attach(io: file1, filename: 'malfoymanor1.jpg')
+
+file11 = open("app/assets/images/malfoymanor2.jpg")
+listing1.photos.attach(io: file11, filename: 'malfoymanor2.jpg')
 
 listing2 = Listing.create!(
     title: '4 privet drive cupboard under stairs',
@@ -71,7 +74,7 @@ listing2 = Listing.create!(
 )
 
 file2 = open("app/assets/images/cupboard.jpg")
-listing2.photo.attach(io: file2, filename: 'cupboard.jpg')
+listing2.photos.attach(io: file2, filename: 'cupboard.jpg')
 
 
 
@@ -92,4 +95,4 @@ listing3 = Listing.create!(
 )
 
 file3 = open("app/assets/images/number12.jpg")
-listing3.photo.attach(io: file3, filename: 'number12.jpg')
+listing3.photos.attach(io: file3, filename: 'number12.jpg')

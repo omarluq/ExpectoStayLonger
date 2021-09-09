@@ -14,7 +14,6 @@ class Api::ListingsController < ApplicationController
 
     def show 
         @listing = Listing.find(params[:id])
-        # debugger
     end
 
     def update 
@@ -46,6 +45,6 @@ class Api::ListingsController < ApplicationController
 
     private 
     def listing_params 
-        params.require(:listing).permit(:host_id, :title, :description, :street_address, :city, :country, :postcode, :price, :num_of_beds, :house_elf, :owl_friendly, :longitude, :latitude)
+        params.require(:listing).permit(:host_id, :title, :description, :street_address, :city, :country, :postcode, :price, :num_of_beds, :house_elf, :owl_friendly, :longitude, :latitude, photos: [])
     end
 end
