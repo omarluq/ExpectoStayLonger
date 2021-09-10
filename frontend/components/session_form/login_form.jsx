@@ -42,13 +42,13 @@ class LoginForm extends React.Component {
         return (
         
             <div className="session-div">
-            <form className='session' onSubmit={(e)=> this.handleSubmit(e)}>
+            <form className='loginsession' onSubmit={(e)=> this.handleSubmit(e)}>
                 <button className="x" onClick={ ()=>this.props.closeModal()}>X</button>
                 <h4 className="welcome" >Welcome to expectoStayLonger, lets log you in</h4>
                 <br />
-                    <input type="text" value={this.state.email} onChange={this.handleChange("email")} placeholder="Email" className="input"/>
+                    <input className="sessioninput" type="text" value={this.state.email} onChange={this.handleChange("email")} placeholder="Email" />
                 <br />
-                    <input type="password" value={this.state.password} onChange={this.handleChange("password")} placeholder="Password" className="input"/>
+                    <input className="sessioninput" type="password" value={this.state.password} onChange={this.handleChange("password")} placeholder="Password" />
                 <br />
                 <button className="sessionb">
                     Continue

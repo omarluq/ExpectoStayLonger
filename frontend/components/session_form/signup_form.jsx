@@ -44,13 +44,13 @@ class SignUpForm extends React.Component {
                 <button className="x" onClick={ ()=>this.props.closeModal()}>X</button>
                 <h4 className="welcome">Welcome to expectoStayLonger, lets sign you up</h4>
                 <br />
-                    <input type="text" value={this.state.email} onChange={this.handleChange("email")} placeholder="Email" className="input"/>
+                    <input className="sessioninput" type="text" value={this.state.email} onChange={this.handleChange("email")} placeholder="Email" />
                 <br />
-                    <input type="text" value={this.state.name} onChange={this.handleChange("name")} placeholder="Name" className="input"/>
+                    <input className="sessioninput" type="text" value={this.state.name} onChange={this.handleChange("name")} placeholder="Name" />
                 <br />
-                    <textarea value={this.state.bio} onChange={this.handleChange("bio")} placeholder="Bio" className="input"/>
+                    <textarea className="sessioninput" value={this.state.bio} onChange={this.handleChange("bio")} placeholder="Bio" />
                 <br />
-                    <input type="password" value={this.state.password} onChange={this.handleChange("password")} placeholder="Password" className="input"/>
+                    <input className="sessioninput" type="password" value={this.state.password} onChange={this.handleChange("password")} placeholder="Password" />
                 <br />
                 <button className="sessionb">
                     Continue
