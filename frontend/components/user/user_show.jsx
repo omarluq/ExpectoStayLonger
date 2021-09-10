@@ -16,7 +16,20 @@ class ShowUser extends React.Component {
 
     render(){
         if(!this.props.user) return SignalCellularNullSharp
-        let listings = this.props.user[0].user_listing.map((listing, i) =>  <ListingItem key={`${listing} ${i}`} listing = {listing}/>)
+        let listings = this.props.user[0].user_listing.map((listing, i) => <Link className="imglink" to={`/listing/${listing.id}`}>
+                                                                            <li className='showlisting' key={`${listing} ${i}`} > 
+                                                                                <div className="listingimg" >
+                                                                                    <img className="listing-img" src={listing.photos[0]} width='250' height="200" />
+                                                                                </div>
+                                                                                <br /> 
+                                                                                <h4>
+                                                                                    {listing.title} 
+                                                                                </h4>
+                                                                            </li>  
+                                                                            </Link> )
+        
+        
+
         return (
 
             <div className="usershow">
@@ -31,7 +44,7 @@ class ShowUser extends React.Component {
                 </div>
 
                 <ul className = "userlistings">
-                    <h4 className="yourlistings">Listings by you</h4>
+                    <h4 className="titles">Listings by you</h4>
                     {listings}
                     <button className="makenewlisting">
                     <Link className="user-link" to="/new/listing" >Add a new listing</Link>
