@@ -40,7 +40,7 @@ listing1 = Listing.create!(
     the approach of a person he hallway is large, dimly lit, and sumptuously decorated, with a magnificent carpet covering the 
     stone floor. The walls of the entrance hall display pale-faced portraits lining the walls, and at the end of the hall is the 
     bronze-handled door to the drawing room',
-    host_id: 1,
+    host_id: user.id,
     street_address: 'Doe Lea',
     city: 'Chesterfield',
     country: 'United Kingdom',
@@ -62,7 +62,7 @@ listing1.photos.attach(io: file11, filename: 'malfoymanor2.jpg')
 listing2 = Listing.create!(
     title: '4 privet drive cupboard under stairs',
     description: 'Small and dusty, with lots of spiders.',
-    host_id: 2,
+    host_id: user2.id,
     street_address: '12 Picket Post Close',
     city: 'Bracknell',
     country: 'UL',
@@ -83,7 +83,7 @@ listing2.photos.attach(io: file2, filename: 'cupboard.jpg')
 listing3 = Listing.create!(
     title: '12 Grimmauld Place',
     description: 'Gloomy and cobwebby, with the wallpaper peeling off and the carpet worn thin.',
-    host_id: 3,
+    host_id: user3.id,
     street_address: '23 Claremont Square',
     city: 'London',
     country: 'United Kingdom',
