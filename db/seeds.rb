@@ -40,7 +40,7 @@ listing1 = Listing.create!(
     the approach of a person he hallway is large, dimly lit, and sumptuously decorated, with a magnificent carpet covering the 
     stone floor. The walls of the entrance hall display pale-faced portraits lining the walls, and at the end of the hall is the 
     bronze-handled door to the drawing room',
-    host_id: user.id,
+    host_id: user1.id,
     street_address: 'Doe Lea',
     city: 'Chesterfield',
     country: 'United Kingdom',
