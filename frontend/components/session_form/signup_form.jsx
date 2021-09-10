@@ -59,7 +59,7 @@ class SignUpForm extends React.Component {
                 <ul>
                     {errors}
                 </ul>
-                <p className='bottoms'>Already a user? <Link to="/login">Brilliant!</Link></p>
+                <p className='bottoms'>Already a user? <Link onClick={()=>this.props.closeModal(), this.props.openModal}  >Brilliant!</Link></p>
             </form>
             </div>
         )

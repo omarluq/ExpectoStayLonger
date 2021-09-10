@@ -61,7 +61,7 @@ class LoginForm extends React.Component {
                 <ul>
                     {errors}
                 </ul>
-                <p className='bottoms'>Not a current user? <Link to="/signup">Become brilliant!</Link></p>
+                <p className='bottoms'>Not a current user? <Link onClick={()=>this.props.closeModal(), this.props.openModal}>Become brilliant!</Link></p>
             </form>
             
             </div>
