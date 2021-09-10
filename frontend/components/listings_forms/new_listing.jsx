@@ -65,7 +65,7 @@ class NewListing extends React.Component {
 
 
     handlePhotos(e){
-        e.preventDefault()
+        // e.preventDefault()
         // this.setState({photos: Array.from(e.target.files)})
         // console.log(this.state);
         const files = e.currentTarget.files
@@ -73,12 +73,12 @@ class NewListing extends React.Component {
         for(let i =0; i < files.length;i++){
             const fileReader = new FileReader()
             fileReader.onloadend = () => {
-                let photo = {photoFile: files[i], photoUrl: fileReader.result}
+                let photo = {photoFile: files[i], photoUrl: fileReader.readAsDataURL(files[i])}
                 that.state.photos.push(photo)
             }
-            if (files[i]){
-                fileReader.readAsDataURL(files[i])
-            }
+            // if (files[i]){
+            //     fileReader.readAsDataURL(files[i])
+            // }
         }
     }
 
