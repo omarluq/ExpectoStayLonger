@@ -29,7 +29,6 @@ class ListingIndex extends React.Component {
                 <h4 className="wizarding">Stays in the wizarding world</h4>
                     {listings}
                 </ul>
-                {/* < Map listings = {this.props.listings} fetchListings = {this.props.fetchListings}/> */}
                 < MapConatiner />
                 
             </div>

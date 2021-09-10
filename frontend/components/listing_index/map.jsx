@@ -26,7 +26,7 @@ class Map extends React.Component {
       zoom: 7,
     })
     const nav = new mapboxgl.NavigationControl()
-    this.map.addControl(nav, 'bottom-right')
+    this.map.addControl(nav, 'top-right')
   }
 
   componentDidUpdate(){

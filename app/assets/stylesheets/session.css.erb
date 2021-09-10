@@ -132,11 +132,12 @@
     #mapContainer {
         position: fixed;
         right: 0;
-        width: 50vw;
-        height: 75vh;
-        margin-top: 100px;
+        width: 40vw;
+        height: 100vh;
+        <%# margin-top: 70px; %>
     }
 
+   
 
 
 
@@ -273,20 +274,17 @@
     .listings{
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         padding: 15px;
         margin: 25px;
         overflow-y: scroll;
     }
 
      .indlisting{
-         padding: 20px;
          margin-left: 15px;
          display: flex;
          flex-direction: column;
          flex-wrap: wrap;
-         border-top: 1px solid black;
-         border-bottom: 1px solid black;
-         max-width: 200px;
      }
 
      .stays {
@@ -294,10 +292,26 @@
          flex-direction: row;
          flex-wrap: wrap;
          justify-content: space-between;
+         width: 60vw;
+     }
+
+
+     .listingdiv{
+        display: flex;
+        position: row;
+        align-items: center;
+        width: 50vw;
+        min-width: 50vw;
+        height: 20vh
+        border-top: 2px solid #ddeddd;
+        border-bottom: 2px solid #ddeddd;
+        padding: 20px;
      }
 
      .wizarding{
         padding: 30px;
+        font-size: 30px;
+        border-bottom: 2px solid #ddeddd;
      }
 
 
@@ -493,5 +507,41 @@
     width: 300px;
     height: 25px;
 }
-
     
+.listingimg {
+   width: 300px;
+   height: 200px;
+}
+
+.listing-img{
+    border-radius: 10px;
+
+}
+
+.imglink {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    font-family: helvetica;
+    text-decoration: none;
+    color: black;
+    padding: 7px 15px 7px 15px;
+}
+
+.imglink:hover {
+    background-color: transparent;
+}
+
+
+.listingp {
+    color: #747a74;
+    font-size: 12px;
+}
+
+
+.showh4{
+    font-size: 20px;
+}
