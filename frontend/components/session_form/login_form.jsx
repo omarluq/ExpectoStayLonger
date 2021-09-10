@@ -13,7 +13,7 @@ class LoginForm extends React.Component {
 
     handleSubmit(e){
         e.preventDefault()
-        this.props.login(this.state)
+        this.props.login(this.state).then( (res) => this.props.closeModal())
     }
 
     handleChange(field){
@@ -27,14 +27,23 @@ class LoginForm extends React.Component {
         this.props.login(this.state)
     }
 
+    componentWillUnmount(){
+        this.props.clearErrors()
+    }
+
 
     render(){
-            const errors = this.props.errors.map((error, i)=> <li className="errors" key={i}>{error}</li>)
+        let errors;
+        if (this.props.errors){
+            errors = this.props.errors.map((error, i)=> <li className="errors" key={i}>{error}</li>)} else {
+                errors = <div></div>
+            }
 
         return (
         
             <div className="session-div">
             <form className='session' onSubmit={(e)=> this.handleSubmit(e)}>
+                <button className="x" onClick={ ()=>this.props.closeModal()}>X</button>
                 <h4 className="welcome" >Welcome to expectoStayLonger, lets log you in</h4>
                 <br />
                     <input type="text" value={this.state.email} onChange={this.handleChange("email")} placeholder="Email" className="input"/>

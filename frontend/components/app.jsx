@@ -14,11 +14,13 @@ import NewListingContainer from "./listings_forms/new_listing_container";
 
 
 
+
 const App = (props) => {
 
     return (
         <>
         < HeaderConatiner />
+       
         <Route exact path = "/listings/:city" component={ListingIndexContainer}/>
         <Route exact path = "/listings/" component={ListingIndexContainer}/>
         <Route exact path ="/" component={LandingPageContainer}/>

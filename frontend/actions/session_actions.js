@@ -4,6 +4,7 @@ import * as APIUtil from "../util/session_api_utl"
 export const RECEIVE_USER = "RECEIVE_USER"
 export const LOGOUT_USER = "LOGOUT_USER"
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS"
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 
 
@@ -20,6 +21,10 @@ const receiveErrors = errors => ({
     type: RECEIVE_SESSION_ERRORS,
     errors
 })
+
+export const clearErrors = () => ({
+    type: CLEAR_ERRORS,
+  });
 
 
 export const signup = user => dispatch => (

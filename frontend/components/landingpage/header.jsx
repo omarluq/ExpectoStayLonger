@@ -38,9 +38,9 @@ class Header extends React.Component  {
                 <div className="dropDown" >
                 <button className="dropDownb"> <MenuIcon/> <AccountCircleIcon/>  </button>
                 <div className="content" >
-                    <Link className="link" to="/login">Log in</Link>
+                    <a className="link" onClick = {()=> this.props.login()}> Login </a>
                 <br />
-                    <Link className="link" to="/signup">Sign up</Link>
+                    <a className="link" onClick = {()=> this.props.signup()}> Signup </a>
                 </div>
                 </div>
             </div>
