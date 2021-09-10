@@ -3,8 +3,9 @@ class Api::ListingsController < ApplicationController
 
 
     def create 
-        @listing = Listing.create!(listing_params)
-        if @listing 
+        debugger
+        @listing = Listing.new(listing_params)
+        if @listing.save
             render :show
         else 
             render json: @listing.errors.full_messages
@@ -45,6 +46,6 @@ class Api::ListingsController < ApplicationController
 
     private 
     def listing_params 
-        params.require(:listing).permit(:host_id, :title, :description, :street_address, :city, :country, :postcode, :price, :num_of_beds, :house_elf, :owl_friendly, :longitude, :latitude, photos: [])
+        params.require(:listing).permit(:host_id, :title, :description, :street_address, :city, :country, :postcode, :price, :num_of_beds, :house_elf, :owl_friendly, :longitude, :latitude, :photos)
     end
 end

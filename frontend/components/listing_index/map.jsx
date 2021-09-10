@@ -36,11 +36,11 @@ class Map extends React.Component {
   }
 
   marker(listing) {
-    let photos = listing.photos.map(photo=> <img src= {photo} width='150' height="150" />)
+    // let photos = listing.photos.map(photo=> <img src= {photo} width='150' height="150" />)
     return (
       
       `<div> 
-      ${photos}
+      <img src=${listing.photos[0]} width="200" height="200" />
       <h4>
         ${listing.title}
       </h4>

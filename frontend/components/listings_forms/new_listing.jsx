@@ -39,18 +39,55 @@ class NewListing extends React.Component {
         }).send().then((response)=>{
             this.setState({host_id: this.props.session.id})  
             this.setState({longitude: response.body.features[0].center[0], latitude: response.body.features[0].center[1]})
-            this.props.createListing(this.state).then(res=>{
-                                                                // this.props.history.location.pathname = `/`
-                                                                this.props.history.replace(`/listing/${res.listing.id}`)
-                                                            }
+            const formData = new FormData()
+            formData.append('listing[host_id]', this.state.host_id)
+            formData.append('listing[title]', this.state.title)
+            formData.append('listing[description]', this.state.description)
+            formData.append('listing[street_address]', this.state.street_address)
+            formData.append('listing[city]', this.state.city)
+            formData.append('listing[country]', this.state.country)
+            formData.append('listing[postcode]', this.state.postcode)
+            formData.append('listing[price]', this.state.price)
+            formData.append('listing[num_of_beds]', this.state.num_of_beds)
+            formData.append('listing[house_elf]', this.state.house_elf)
+            formData.append('listing[owl_friendly]', this.state.owl_friendly)
+            formData.append('listing[longitude]', this.state.longitude)
+            formData.append('listing[latitude]', this.state.latitude)
+            formData.append('listing[photos]', this.state.photos)
+            // console.log(Array.from(formData.entries()));
+            
+            // console.log(this.state);
+            // debugger
+            this.props.createListing(formData).then(res=>{this.props.history.replace(`/listing/${res.listing.id}`) }
             )
         })   
     }
 
 
+    handlePhotos(e){
+        e.preventDefault()
+        // this.setState({photos: Array.from(e.target.files)})
+        // console.log(this.state);
+        const files = e.currentTarget.files
+        const that = this 
+        for(let i =0; i < files.length;i++){
+            const fileReader = new FileReader()
+            fileReader.onloadend = () => {
+                let photo = {photoFile: files[i], photoUrl: fileReader.result}
+                that.state.photos.push(photo)
+            }
+            if (files[i]){
+                fileReader.readAsDataURL(files[i])
+            }
+        }
+    }
+
+
+
+
 
     render(){
-
+        
         return (
 
             <div className="new-listing-div">
@@ -78,17 +115,17 @@ class NewListing extends React.Component {
                 <br />
                 <label className="newformlabel" > 
                 <input  type="checkbox" value={this.state.house_elf} onChange={this.handleChange('house_elf')} className="new-listing-form" /> Comes with house elf
-                    
                 </label>
                 <br />
                 <label className="newformlabel" > 
                 <input  type="checkbox" value={this.state.owl_friendly} onChange={this.handleChange('owl_friendly')} className="new-listing-form" /> Owl friendly
-                    
                 </label >
+                <br />
+                <input  type="file" onChange={(e)=>this.handlePhotos(e)}   multiple/>
                 <br />
                 <button className="newformbutton">Finish</button>
                 </form>
-      
+                
             <div className="snape"></div>
             </div>
         )
