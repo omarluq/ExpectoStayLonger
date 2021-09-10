@@ -9,7 +9,6 @@ class Api::ListingsController < ApplicationController
         else 
             render json: @listing.errors.full_messages
         end 
-
     end
 
     def show 

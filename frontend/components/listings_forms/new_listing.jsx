@@ -53,34 +53,14 @@ class NewListing extends React.Component {
             formData.append('listing[owl_friendly]', this.state.owl_friendly)
             formData.append('listing[longitude]', this.state.longitude)
             formData.append('listing[latitude]', this.state.latitude)
-            formData.append('listing[photos]', this.state.photos)
-            // console.log(Array.from(formData.entries()));
-            
-            // console.log(this.state);
-           
+            for (let i =0; i < this.state.photos.length; i++) {
+                formData.append('listing[photos][]', this.state.photos[i])
+            }
             this.props.createListing(formData).then(res=>{this.props.history.replace(`/listing/${res.listing.id}`) }
             )
         })   
     }
 
-
-    handlePhotos(e){
-        // e.preventDefault()
-        // this.setState({photos: Array.from(e.target.files)})
-        // console.log(this.state);
-        const files = e.currentTarget.files
-        const that = this 
-        for(let i =0; i < files.length;i++){
-            const fileReader = new FileReader()
-            fileReader.onloadend = () => {
-                let photo = {photoFile: files[i], photoUrl: fileReader.readAsDataURL(files[i])}
-                that.state.photos.push(photo)
-            }
-            // if (files[i]){
-            //     fileReader.readAsDataURL(files[i])
-            // }
-        }
-    }
 
 
 
@@ -91,8 +71,6 @@ class NewListing extends React.Component {
         return (
 
             <div className="new-listing-div">
-                
-
                 <form className ="newlistingform" onSubmit={(e)=>this.handleSubmit(e)}>
                 <br />
                 <h4>Hey! Listing a new Magical place?</h4>
@@ -121,11 +99,10 @@ class NewListing extends React.Component {
                 <input  type="checkbox" value={this.state.owl_friendly} onChange={this.handleChange('owl_friendly')} className="new-listing-form" /> Owl friendly
                 </label >
                 <br />
-                <input  type="file" onChange={(e)=>this.handlePhotos(e)}   multiple/>
+                <input  type="file" onChange={(e)=>this.setState({ photos: e.target.files})}   multiple/>
                 <br />
                 <button className="newformbutton">Finish</button>
                 </form>
-                
             <div className="snape"></div>
             </div>
         )
