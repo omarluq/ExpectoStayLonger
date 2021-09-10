@@ -10,7 +10,7 @@ import HeaderConatiner from './landingpage/header_container';
 import ListingIndexContainer from "./listing_index/listing_index_container";
 import ListingShow from "./listing_show/listing_show_container";
 import NewListingContainer from "./listings_forms/new_listing_container";
-
+import ModalContainer from "./landingpage/modal_container"
 
 
 
@@ -20,7 +20,7 @@ const App = (props) => {
     return (
         <>
         < HeaderConatiner />
-       
+        < ModalContainer />
         <Route exact path = "/listings/:city" component={ListingIndexContainer}/>
         <Route exact path = "/listings/" component={ListingIndexContainer}/>
         <Route exact path ="/" component={LandingPageContainer}/>

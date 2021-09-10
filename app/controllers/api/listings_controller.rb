@@ -3,13 +3,8 @@ class Api::ListingsController < ApplicationController
 
 
     def create 
-        # if params[:listing][:photos]
-        #     listing_params[:photos] = params[:listing][:photos]
-        # end
         @listing = Listing.create!(listing_params)
-        debugger
         if @listing
-            debugger
             render :show
         else 
             render json: @listing.errors.full_messages

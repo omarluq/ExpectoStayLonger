@@ -57,7 +57,7 @@ class NewListing extends React.Component {
             // console.log(Array.from(formData.entries()));
             
             // console.log(this.state);
-            // debugger
+           
             this.props.createListing(formData).then(res=>{this.props.history.replace(`/listing/${res.listing.id}`) }
             )
         })   
