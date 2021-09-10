@@ -36,12 +36,11 @@ class Map extends React.Component {
   }
 
   marker(listing) {
-    // let photos = listing.photos.map(photo=> <img src= {photo} width='150' height="150" />)
     return (
       
       `<div> 
       <img src=${listing.photos[0]} width="200" height="200" />
-      <h4>
+      <h4 > 
         ${listing.title}
       </h4>
       <p>
@@ -50,12 +49,10 @@ class Map extends React.Component {
       </div>`
     )
   }
-  
-
 
 
   render(){
-    return <div id="mapContainer" ></div>;  
+    return <div id="mapContainer" ></div>
   }
    
 

@@ -12,7 +12,7 @@ class Api::ListingsController < ApplicationController
     end
 
     def show 
-        @listing = Listing.find(params[:id])
+        @listing = Listing.with_attached_photos.find(params[:id])
     end
 
     def update 
@@ -32,7 +32,7 @@ class Api::ListingsController < ApplicationController
     end
 
     def index 
-        @listings = Listing.all
+        @listings = Listing.with_attached_photos.all
         if params[:city]
             @listings = Listing.where(city: params[:city])
             render :index
