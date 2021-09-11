@@ -1,5 +1,6 @@
 import React from 'react';
 import ModalContainer from './modal_container';
+import Footer from "./footer/footer";
 
 
 
@@ -12,6 +13,8 @@ const LandingPage = (props) => {
              
             <div className="img"></div>
             < ModalContainer />
+
+            < Footer/>
         </div>
     )
 }

@@ -28,7 +28,7 @@ class Header extends React.Component  {
 
 
     render(){
-
+        
         const beforeLogin = () => (
             <div className={this.state.scrollClass} >
                 <Link to="/">
