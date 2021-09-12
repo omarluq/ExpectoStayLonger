@@ -99,7 +99,9 @@ class NewListing extends React.Component {
                 <input  type="checkbox" value={this.state.owl_friendly} onChange={this.handleChange('owl_friendly')} className="new-listing-form" /> Owl friendly
                 </label >
                 <br />
-                <input  type="file" onChange={(e)=>this.setState({ photos: e.target.files})}   multiple/>
+                <label className="fakefileinput"> Upload Image
+                <input className="fileinput"  type="file" onChange={(e)=>this.setState({ photos: e.target.files})}   multiple/>
+                </label>
                 <br />
                 <button className="newformbutton">Finish</button>
                 </form>
