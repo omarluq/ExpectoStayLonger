@@ -22,17 +22,22 @@ class CreateReservation extends React.Component {
     handleChange(field) {
        
         return (
-        e => {
-            if (field === 'start_date'){
-                this.end = ""
-            } else if (field === 'end_date') {
-                this.setTotalPrice(e)
+            e => {
+                if (field === 'start_date'){
+                    this.end = ""
+                } else if (field === 'end_date') {
+                    this.setTotalPrice(e)
+                }
+                let date = e.target.value.split('-')
+                let mydate = new Date(date[0], date[1] - 1, date[2])
+                this.setState({[field]: mydate})
             }
-            let date = e.target.value.split('-')
-            let mydate = new Date(date[0], date[1] - 1, date[2])
-            this.setState({[field]: mydate})
-        }
         )
+    }
+
+
+    componentDidUpdate(prevProps){
+        if (this.props.reservation.guest_id !== prevProps.reservation.guest_id) this.setState({['guest_id']: this.props.reservation.guest_id});
     }
 
     setTotalPrice(e){
