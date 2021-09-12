@@ -11,27 +11,53 @@ User.delete_all
 require 'open-uri'
 
 user1 = User.create!(
-    name: 'richard',
-    email: "richard@gmail.com",
-    bio: "hey im richard",
+    name: 'Dobby',
+    email: "dobbythehouseelef@gmail.com",
+    bio: "Dobby has no master! dobby is free",
     password: 123456
 )
 
 
 user2 = User.create!(
-    name: 'richard',
-    email: "richard2@gmail.com",
-    bio: "hey im richard 2",
+    name: 'Lucius Malfoy',
+    email: "lucius.malfoy@gmail.com",
+    bio: "Previous governor of Hogwarts school of witchcraft and wizardry.",
     password: 123456
 )
 
 
 user3 = User.create!(
-    name: 'richard',
-    email: "richard3@gmail.com",
-    bio: "hey im richard 3",
+    name: 'Albus Percival Wulfric Brian Dumbledore',
+    email: "apwvd@gmail.com",
+    bio: "Headmaster of Hogwarts school of witchcraft and wizardry.",
     password: 123456
 )
+
+user4 = User.create!(
+    name: 'Harry Potter',
+    email: "harrypotter@gmail.com",
+    bio: "I am the choosen one.",
+    password: 123456
+)
+
+
+user5 = User.create!(
+    name: 'Ron Weasley',
+    email: "ron.weasley@gmail.com",
+    bio: "Just another weasley.",
+    password: 123456
+)
+
+
+user6 = User.create!(
+    name: 'Bill Weasley',
+    email: "bill.weasley@gmail.com",
+    bio: "I'm the handsome weasley!, husband to Fleur Delacour,.",
+    password: 123456
+)
+
+
+
 
 
 listing1 = Listing.create!(
@@ -40,7 +66,7 @@ listing1 = Listing.create!(
     the approach of a person he hallway is large, dimly lit, and sumptuously decorated, with a magnificent carpet covering the 
     stone floor. The walls of the entrance hall display pale-faced portraits lining the walls, and at the end of the hall is the 
     bronze-handled door to the drawing room',
-    host_id: user1.id,
+    host_id: user2.id,
     street_address: 'Doe Lea',
     city: 'Chesterfield',
     country: 'United Kingdom',
@@ -48,8 +74,8 @@ listing1 = Listing.create!(
     price: 250,
     num_of_beds: 20,
     house_elf: true,
-    owl_friendly: true,
-    longitude: 1.3129,
+    owl_friendly: false,
+    longitude: -1.3129,
     latitude: 53.1921
 )
 
@@ -62,15 +88,15 @@ listing1.photos.attach(io: file11, filename: 'malfoymanor2.jpg')
 listing2 = Listing.create!(
     title: '4 privet drive cupboard under stairs',
     description: 'Small and dusty, with lots of spiders.',
-    host_id: user2.id,
+    host_id: user4.id,
     street_address: '12 Picket Post Close',
     city: 'Bracknell',
     country: 'UL',
     postcode: "RG12 9FG",
     price: 15,
     num_of_beds: 1,
-    house_elf: true,
-    owl_friendly: true,
+    house_elf: false,
+    owl_friendly: false,
     longitude: -0.753980,
     latitude: 51.416039
 )
@@ -83,7 +109,7 @@ listing2.photos.attach(io: file2, filename: 'cupboard.jpg')
 listing3 = Listing.create!(
     title: '12 Grimmauld Place',
     description: 'Gloomy and cobwebby, with the wallpaper peeling off and the carpet worn thin.',
-    host_id: user3.id,
+    host_id: user4.id,
     street_address: '23 Claremont Square',
     city: 'London',
     country: 'United Kingdom',
@@ -98,3 +124,75 @@ listing3 = Listing.create!(
 
 file3 = open("app/assets/images/number12.jpg")
 listing3.photos.attach(io: file3, filename: 'number12.jpg')
+
+
+listing4 = Listing.create!(
+    title: 'The burrow',
+    description: 'It had once been a large stone pigpen, but extra rooms had been added here and there until it became several stories high, crooked and held up by magic.',
+    host_id: user5.id,
+    street_address: 'Yelverton',
+    city: 'Devon',
+    country: 'United Kingdom',
+    postcode: "N1 9LX",
+    price: 100,
+    num_of_beds: 6,
+    house_elf: false,
+    owl_friendly: true,
+    longitude: -4.093703271149366,
+    latitude: 50.485204974636076
+)
+
+file4 = open("app/assets/images/theburrow.jpg")
+listing4.photos.attach(io: file4, filename: 'theburrow.jpg')
+
+file44 = open("app/assets/images/theburrow2.jpg")
+listing4.photos.attach(io: file44, filename: 'theburrow2.jpg')
+
+
+listing5 = Listing.create!(
+    title: 'The shrieking shack',
+    description: 'The most haunted in the united kingdom! Great for werewolf, you are always welcome here when its a full moon.',
+    host_id: user3.id,
+    street_address: 'Castle Rd',
+    city: 'Dufftown',
+    country: 'United Kingdom',
+    postcode: "AB55 4GH",
+    price: 35,
+    num_of_beds: 3,
+    house_elf: false,
+    owl_friendly: false,
+    longitude: -3.1238732288441042,
+    latitude: 57.45294748182715
+)
+
+file5 = open("app/assets/images/ShriekingShack.jpg")
+listing5.photos.attach(io: file5, filename: 'ShriekingShack.jpg')
+
+file55 = open("app/assets/images/ShriekingShack2.jpg")
+listing5.photos.attach(io: file55, filename: 'ShriekingShack2.jpg')
+
+
+
+
+
+listing6 = Listing.create!(
+    title: 'Shell Cottage',
+    description: 'Lonely and beautiful tiny cottage standing alone on a cliff overlooking the sea embedded with shells and whitewashed.',
+    host_id: user6.id,
+    street_address: 'S W coast path',
+    city: 'Helston',
+    country: 'United Kingdom',
+    postcode: "TR12 7NT",
+    price: 60,
+    num_of_beds: 3,
+    house_elf: false,
+    owl_friendly: true,
+    longitude: -5.206211084664574,
+    latitude: 49.958933721931174
+)
+
+file6 = open("app/assets/images/shellcottage.jpg")
+listing6.photos.attach(io: file6, filename: 'shellcottage.jpg')
+
+file66 = open("app/assets/images/shellcottage2.jpg")
+listing6.photos.attach(io: file66, filename: 'shellcottage2.jpg')

@@ -14,23 +14,23 @@ const Footer =  () => {
 
                 <h4>Social</h4>
 
-                <a className="footerlink" href="https://github.com/omarluq">
+                <a className="footerlink" href="https://github.com/omarluq" target="_blank">
                     <GitHubIcon className="icon" /> omarluq
                 </a>
-                <a className="footerlink" href="https://www.linkedin.com/in/omar-luqman-147011183/">
+                <a className="footerlink" href="https://www.linkedin.com/in/omar-luqman-147011183/" target="_blank">
                     <LinkedInIcon className="icon" /> Omar Luqman
                     </a>
                 <a className="footerlink" href="https://twitter.com/therealomarluq">
                     <TwitterIcon className="icon" /> therealomarluq
                     </a>
-                <a className="footerlink" href="https://www.instagram.com/nottherealomarluq/">
+                <a className="footerlink" href="https://www.instagram.com/nottherealomarluq/" target="_blank">
                     <InstagramIcon className="icon" /> nottherealomarluq
                     </a>
             </div>
 
             <div className="otherprojection"> 
                 <h4>My other projects</h4>
-                <a className="footerlink" href="https://omarluq.github.io/CyberWars/">
+                <a className="footerlink" href="https://omarluq.github.io/CyberWars/" target="_blank">
                     Cyberwars
                 </a>
             </div>
@@ -38,9 +38,9 @@ const Footer =  () => {
             <div className="contact">
                 <h4>Reach me at</h4>
                 <h5>Email:</h5>
-                <p>omaralanii@outlook.com</p>
+                <p className="footerp">omaralanii@outlook.com</p>
                 <h5>Mobile:</h5>
-                <p>(480) 352-4966</p>
+                <p className="footerp">(480) 352-4966</p>
                 <h5></h5>
             </div>
 
