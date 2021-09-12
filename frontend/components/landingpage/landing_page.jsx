@@ -13,7 +13,7 @@ const LandingPage = (props) => {
              
             <div className="img"></div>
             < ModalContainer />
-            
+            <div className="featuedContainer">
             <h4 className="featuredtitle">Featured</h4>
             <div className="featured"> 
                 
@@ -46,7 +46,7 @@ const LandingPage = (props) => {
                     <div className="broomstick"></div>
                     <a className="footerlink" href="https://www.wizardingworld.com/features/things-you-would-use-broomsticks-for-other-than-flying" target="_blank">A Funy article about broomsticks</a>
                 </div>
-           
+                </div>
             </div>
             < Footer/>
         </div>
