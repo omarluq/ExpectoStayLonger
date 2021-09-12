@@ -19,13 +19,13 @@ const Footer =  () => {
                 </a>
                 <a className="footerlink" href="https://www.linkedin.com/in/omar-luqman-147011183/" target="_blank">
                     <LinkedInIcon className="icon" /> Omar Luqman
-                    </a>
-                <a className="footerlink" href="https://twitter.com/therealomarluq">
+                </a>
+                <a className="footerlink" href="https://twitter.com/therealomarluq" target="_blank">
                     <TwitterIcon className="icon" /> therealomarluq
-                    </a>
+                </a>
                 <a className="footerlink" href="https://www.instagram.com/nottherealomarluq/" target="_blank">
                     <InstagramIcon className="icon" /> nottherealomarluq
-                    </a>
+                </a>
             </div>
 
             <div className="otherprojection"> 

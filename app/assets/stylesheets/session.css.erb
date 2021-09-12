@@ -732,8 +732,80 @@
     min-width: 95px;
 }
 
+.notallowed {
+    cursor: not-allowed;
+}
+
+.notallowed::-webkit-calendar-picker-indicator{
+    cursor: not-allowed;
+    display: none;
+}
 
 
+.listing-photos {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 90%;
+}
+
+.listingpage{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: 50px;
+}
+
+.listinginfo{
+    display: flex;
+    flex-direction: row;
+    gap: 400px;
+}
+
+.listinginfo2{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
 
 
+.listingshowthumbs{
+    font-size: 20px;
+}
 
+
+.resForm {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-radius: 25px;
+    box-shadow: 0 3px 20px rgb(0 0 0);
+    border: 1px solid black;
+    width: 300px;
+    min-width: 300px;
+    padding: 20px;
+    flex-wrap: nowrap;
+    align-items: center;
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+
+.listinshowimg{
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+
+
+.listingshowtitle{
+    font-size: 25px;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+}
+
+.listindes{
+    word-break: break-all;
+    white-space: normal;
+    max-width: 500px;
+}
