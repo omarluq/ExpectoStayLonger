@@ -24,7 +24,20 @@ time, mark, audio, video {
  font-size: 100%;
  font: inherit;
  vertical-align: baseline;
- font-family: helvetica;
+ font-family: 'Overlock SC', cursive;
+}
+
+::placeholder{
+    color: black;
+}
+
+
+textarea{
+    font-family: 'Overlock SC', cursive;
+}
+
+input {
+    font-family: 'Overlock SC', cursive;
 }
 
 .link{
@@ -34,7 +47,7 @@ time, mark, audio, video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
-    font-family: helvetica;
+    font-family: 'Overlock SC', cursive;
     text-decoration: none;
     color: black;
     padding: 7px 15px 7px 15px;
@@ -50,6 +63,7 @@ button{
     width: 150px;
     height: 30px;
     box-shadow: 0 3px 20px rgba(black, 0.2);
+    font-family: 'Overlock SC', cursive;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
