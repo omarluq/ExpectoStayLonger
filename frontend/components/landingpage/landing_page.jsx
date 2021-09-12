@@ -44,7 +44,7 @@ const LandingPage = (props) => {
 
                 <div className="featured-icon">
                     <div className="broomstick"></div>
-                    <a className="footerlink" href="https://www.wizardingworld.com/features/things-you-would-use-broomsticks-for-other-than-flying" target="_blank">A Funy article about broomsticks</a>
+                    <a className="footerlink" href="https://www.wizardingworld.com/features/things-you-would-use-broomsticks-for-other-than-flying" target="_blank">A Funny article about broomsticks</a>
                 </div>
                 </div>
             </div>
