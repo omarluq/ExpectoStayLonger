@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_09_152132) do
+ActiveRecord::Schema.define(version: 2021_09_12_020539) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,18 @@ ActiveRecord::Schema.define(version: 2021_09_09_152132) do
     t.boolean "house_elf", default: false
     t.boolean "owl_friendly", default: false
     t.index ["host_id"], name: "index_listings_on_host_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.datetime "start_date", null: false
+    t.datetime "end_date", null: false
+    t.integer "guest_id", null: false
+    t.integer "listing_id", null: false
+    t.float "total_price", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["guest_id"], name: "index_reservations_on_guest_id"
+    t.index ["listing_id"], name: "index_reservations_on_listing_id"
   end
 
   create_table "users", force: :cascade do |t|
