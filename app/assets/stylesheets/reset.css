@@ -39,6 +39,10 @@ textarea:focus{
     outline: none; 
 }
 
+input:hover {
+    background-color: transparent;
+}
+
 
 textarea{
     font-family: 'Overlock SC', cursive;
