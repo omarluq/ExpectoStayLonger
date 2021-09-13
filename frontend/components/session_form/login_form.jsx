@@ -20,7 +20,7 @@ class LoginForm extends React.Component {
 
   demoUser(e) {
     this.setState({ email: "dobbythehouseelef@gmail.com", password: 123456 });
-    this.props.login(this.state);
+    this.props.login(this.state)
   }
 
   componentWillUnmount() {

@@ -6,7 +6,6 @@ import { withRouter } from 'react-router'
 import {openModal} from '../../actions/modal_actions'
 
 const mapSTP = (state, ownProps) => {
-    // debugger
     return {
     reservation: {start_date: '', end_date: '', guest_id: state.session.id, listing_id: ownProps.match.params.listingId, total_price: 0 },
     listingPrice: state.listings[ownProps.match.params.listingId].price
