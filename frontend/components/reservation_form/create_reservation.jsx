@@ -32,10 +32,16 @@ class CreateReservation extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         if (this.state.guest_id){
-            this.props.createReservation(this.state)} 
+            this.props.createReservation(this.state).then(res => this.redirect(res) )} 
         else {
             this.props.openModal()
         }
+    }
+
+
+    redirect(res){
+        this.props.history.location.pathname = "/" 
+        this.props.history.replace(`reservation/${res.reservation.id}`)
     }
 
 

@@ -3,7 +3,7 @@ class Api::ReservationsController < ApplicationController
     def create 
         @reservation = Reservation.create!(reservation_params)
         if @reservation 
-            # render :shows
+            render :show
         end
     end
 

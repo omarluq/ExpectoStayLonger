@@ -11,6 +11,7 @@ import ListingIndexContainer from "./listing_index/listing_index_container";
 import ListingShow from "./listing_show/listing_show_container";
 import NewListingContainer from "./listings_forms/new_listing_container";
 import ModalContainer from "./landingpage/modal_container"
+import ShowReservationContainer from "./reservation_show/reservation_show_container";
 
 
 
@@ -29,7 +30,7 @@ const App = (props) => {
         <ProtectedRoute exact path = "/new/listing" component={NewListingContainer}/>
         <AuthRoute exact path ="/login" component = {LoginFormContainer}/>
         <AuthRoute exact path ="/signup" component = {SignupFormContainer} />
-
+        <Route exact path ="/reservation/:resId" component={ShowReservationContainer}/>
         
         </>
     )

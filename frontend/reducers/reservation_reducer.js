@@ -1,9 +1,10 @@
 import { RECEIVE_RESEVATION, DELETE_RESERVATION } from "../actions/reservation_actions"
 
 const reservationReducer = (state={}, action) => {
-    switch(action.typ){
+    
+    switch(action.type){
         case RECEIVE_RESEVATION:
-            return {[action.reservation.id]: action.reservation}
+            return {...action.reservation}
         case DELETE_RESERVATION:
             return {}
         default: 

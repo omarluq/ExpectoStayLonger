@@ -26,3 +26,8 @@ export const createReservation = reservation => dispatch => (
 export const deleteReservation = resId => dispatch => (
     resAPI.deleteReservation(resId).then(resId=>dispatch(removeReservation(resId)))
 )
+
+
+export const fetchReservation = resId => dispatch => {
+   return resAPI.fetchReservation(resId).then(reservation=>dispatch(receiveReservation(reservation)))
+}
