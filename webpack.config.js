@@ -9,17 +9,22 @@ module.exports = {
   module: {
     rules: [
       {
-        test: [/\.jsx?$/],
+        test: [/\.jsx?$/], 
         exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
           presets: ['@babel/env', '@babel/react']
         }
-      }
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
+      },
+
     ]
   },
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', '.jsx', '*'],
+    extensions: ['.js', '.jsx', '*', ],
   }
 };

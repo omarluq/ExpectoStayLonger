@@ -1,4 +1,8 @@
 import React from 'react'
+import { DateRangePicker } from 'react-date-range';
+import { DateRange } from 'react-date-range';
+import 'react-date-range/dist/styles.css'; // main style file
+import 'react-date-range/dist/theme/default.css'; // theme css file
 
 class CreateReservation extends React.Component {
     
@@ -19,50 +23,62 @@ class CreateReservation extends React.Component {
     }
 
 
-    handleChange(field) {
-       
-        return (
-            e => {
-                if (field === 'start_date'){
-                    this.end = ""
-                } else if (field === 'end_date') {
-                    this.setTotalPrice(e)
-                }
-                let date = e.target.value.split('-')
-                let mydate = new Date(date[0], date[1] - 1, date[2])
-                this.setState({[field]: mydate})
-            }
-        )
-    }
+   
 
 
     componentDidUpdate(prevProps){
         if (this.props.reservation.guest_id !== prevProps.reservation.guest_id) this.setState({['guest_id']: this.props.reservation.guest_id});
     }
 
-    setTotalPrice(e){
-        let endDate = e.target.value.split('-')
-        let myendDate = new Date(endDate[0], endDate[1] - 1, endDate[2])
-        let diffrence = (myendDate.getTime() - this.state.start_date.getTime()) / (1000 * 3600 * 24)
+    setTotalPrice(){
+        
+        let diffrence = (this.state.end_date.getTime() - this.state.start_date.getTime()) / (1000 * 3600 * 24)
         this.setState({['total_price']: diffrence * this.props.listingPrice })
+    }
+
+    handleDate(e){
+        let {startDate, endDate} = e.selection
+        this.setState({['start_date']: startDate, ['end_date']: endDate }, ()=>this.setTotalPrice())
     }
 
 
     render(){
+        let selectionRange;
+        if (this.state.start_date === ""){
+            selectionRange = {
+            startDate: new Date(),
+            endDate: new Date(),
+            key: 'selection'}
+        } else if (this.state.start_date !== "" && this.state.end_date === "") {
+            selectionRange = {
+            startDate: this.state.start_date,
+            endDate: new Date(),
+            key: 'selection'} 
+        } else if (this.state.end_date !=='') {
+            selectionRange = {
+            startDate: this.state.start_date,
+            endDate: this.state.end_date,
+            key: 'selection'}
+        }
 
         return (
             <form onSubmit={(e)=> this.handleSubmit(e)} className="resForm">
                 <h4>Book this property</h4>
                 <br />
                 <div className="resDates">
-                <label> Start Date: <br />
-                    <input type="date" onChange={this.handleChange('start_date')} />
-                </label>
-                <br />
-                <br />
-                <label> End Date: <br />
-                    <input className={this.end} type="date" onChange={this.handleChange('end_date')} />
-                </label>
+                 <DateRange
+                    ranges={[selectionRange]}
+                    onChange={(e)=>this.handleDate(e)}
+                    editableDateInputs={true}
+                    showSelectionPreview={true}
+                    months={1}
+                    direction="vertical"
+                    showDateDisplay={false}
+                    showMonthAndYearPickers={true}
+                    minDate={new Date()}
+                    rangeColors={["teal"]}
+                />
+                
                 <br />
                 <br />
                 <p>price: {this.props.listingPrice} Galleon / night</p>
