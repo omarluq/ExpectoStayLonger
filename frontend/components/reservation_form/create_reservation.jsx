@@ -9,7 +9,23 @@ class CreateReservation extends React.Component {
     constructor(props){
         super(props)
         this.state = this.props.reservation
-        this.end = 'notallowed'
+        this.dateRange = []
+        this.setDateRange()
+    }
+
+
+    setDateRange(){
+        let that = this 
+        this.props.bloackedDates.forEach((range)=>{
+            let start = new Date(range[0])
+            let end = new Date(range[1])
+            let diff = (end.getTime() - start.getTime())/ (1000 * 3600 * 24) 
+            for (let i=0; i <= diff; i++){
+                let temp = `${start.getFullYear()}/${start.getMonth() + 1}/${start.getDate() + 1}`
+                that.dateRange.push(start)
+                start = new Date(temp)
+            }     
+        })
     }
 
 
@@ -31,7 +47,6 @@ class CreateReservation extends React.Component {
     }
 
     setTotalPrice(){
-        
         let diffrence = (this.state.end_date.getTime() - this.state.start_date.getTime()) / (1000 * 3600 * 24)
         this.setState({['total_price']: diffrence * this.props.listingPrice })
     }
@@ -76,6 +91,7 @@ class CreateReservation extends React.Component {
                     showDateDisplay={false}
                     showMonthAndYearPickers={true}
                     minDate={new Date()}
+                    disabledDates={this.dateRange}
                     rangeColors={["teal"]}
                 />
                 
