@@ -46,7 +46,6 @@ const ListingItem = (props) => {
           </p>
           <br />
           <address>
-            {props.listing.street_address}, <br />
             {props.listing.city}, {props.listing.country}
           </address>
           <br />
