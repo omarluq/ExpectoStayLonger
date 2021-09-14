@@ -2,6 +2,7 @@ import { Button } from "@material-ui/core";
 import React from "react";
 import CreateReservationConatiner from "../reservation_form/create_reservation_container";
 import Review from "./reviews/review_item";
+import CreateReviewContainer from "./reviews/create_review_container";
 
 class ListingShow extends React.Component {
   handleDelete() {
@@ -93,6 +94,7 @@ class ListingShow extends React.Component {
           <br />
           {deleteButton}
         </div>
+        < CreateReviewContainer/>
         <ul>
           {reviews}
         </ul>

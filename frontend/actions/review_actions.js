@@ -25,5 +25,5 @@ export const editReview = review => dispatch => (
 )
 
 export const deleteReview = revId => dispatch => (
-    reviewAPI.editReview(revId).then(revId => dispatch(removeReview(revId)))
+    reviewAPI.deleteReview(revId).then(revId => dispatch(removeReview(revId)))
 )

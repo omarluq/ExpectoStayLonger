@@ -21,16 +21,17 @@ class Review extends React.Component {
     this.props.fetchListing(this.props.listingId);
   }
 
-  //   componentDidMount(){
-  //       this.props.fetchListing(this.props.listingId)
-  //   }
+  handleDelete(){
+    this.props.deleteReview(this.state.id)
+    this.props.fetchListing(this.props.listingId);
+  }
 
   render() {
     let buttons;
     if (this.props.session.id === this.state.author_id) {
       buttons = (
         <div>
-          <button onClick={() => this.props.deleteReview(this.state.id)}>
+          <button onClick={() => this.handleDelete()}>
             Delete Review
           </button>
           <button onClick={() => this.toggle()}>Edit Review</button>
