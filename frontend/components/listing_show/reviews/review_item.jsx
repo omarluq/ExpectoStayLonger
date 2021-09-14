@@ -34,6 +34,8 @@ class Review extends React.Component {
           <button onClick={() => this.handleDelete()}>
             Delete Review
           </button>
+          <br />
+          <br />
           <button onClick={() => this.toggle()}>Edit Review</button>
         </div>
       );
@@ -43,24 +45,29 @@ class Review extends React.Component {
     let show;
     if (this.toggleview === "show") {
       show = (
-        <li>
+        <li className="reviewitem">
           <div>
-            <h4>{this.state.author}</h4>
-            <p>{this.state.rating}</p>
-            <p>{this.state.body}</p>
+            <h4 className="reviewer">{this.state.author}</h4>
+            <br />
+            <p>Gave a rating of: {this.state.rating}</p>
+            <br />
+            <p>Said: {this.state.body}</p>
+            <br />
             {buttons}
           </div>
         </li>
       );
     } else if (this.toggleview === "edit") {
       show = (
-        <li>
+        <li className="reviewitem" >
           <form onSubmit={() => this.edit()}>
             <textarea
+              className="reviewbody"
               value={this.state.body}
               onChange={(e) => this.setState({['body']: e.target.value})}
             ></textarea>
-            <button>submit</button>
+            <br />
+            <button className="reviewsubmit">submit</button>
           </form>
         </li>
       );

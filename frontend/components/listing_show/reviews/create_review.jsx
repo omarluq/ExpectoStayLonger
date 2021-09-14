@@ -18,16 +18,16 @@ class CreateReview extends React.Component {
     handleSubmit(e){
         e.preventDefault()
         this.props.createReview(this.state)
-        this.setState({["body"]: '', ["rating"]: ''})
+        this.setState({["body"]: '', ["rating"]: "1"})
         this.props.fetchListing(this.props.match.params.listingId)
     }
 
     render(){
         return (
-            <form onSubmit={(e)=>this.handleSubmit(e)}>
+            <form className="reviewForm" onSubmit={(e)=>this.handleSubmit(e)}>
                 <h4>Leave a Review</h4>
-                <label> Give it a rating
-                    <select onChange={this.handleChange('rating')}>
+                <label> Give it a rating {" "}
+                    <select value={this.state.rating} onChange={this.handleChange('rating')}> 
                         <option value='1'>1</option>
                         <option value='2'>2</option>
                         <option value='3'>3</option>
@@ -35,8 +35,8 @@ class CreateReview extends React.Component {
                         <option value='5'>5</option>
                     </select>
                 </label>
-                <textarea value={this.state.body} onChange={this.handleChange('body')}></textarea>
-                <button>Submit</button>
+                <textarea className="reviewbody" value={this.state.body} onChange={this.handleChange('body')}></textarea>
+                <button className="reviewsubmit">Submit</button>
             </form>
         )
     }

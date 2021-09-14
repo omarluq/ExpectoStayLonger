@@ -18,12 +18,18 @@ class ListingShow extends React.Component {
     
     if (!this.props.listing) return null;
     let deleteButton;
+    let createReview;
     if (this.props.listing.host_id === this.props.session.id) {
       deleteButton = (
-        <button onClick={() => this.handleDelete()}>Delete Listing</button>
+        <div className="deletecontainer">
+        <button className="deletelistingbutton" onClick={() => this.handleDelete()}>Delete Listing</button>
+        </div>
       );
+      createReview = <div></div>
+      
     } else {
       deleteButton = <CreateReservationConatiner />;
+      createReview = < CreateReviewContainer/>
     }
     let reviews = this.props.listing.reviews.map((review)=> <Review review = {review} 
                                                       fetchListing = {this.props.fetchListing} 
@@ -94,10 +100,14 @@ class ListingShow extends React.Component {
           <br />
           {deleteButton}
         </div>
-        < CreateReviewContainer/>
-        <ul>
-          {reviews}
-        </ul>
+        <div className="reviewscontainer">
+          {createReview}
+          <br />
+          <ul className="reviews"> 
+            <h4 className="reviewstitle">All reviews</h4>
+            {reviews}
+          </ul>
+        </div>
       </div>
     );
   }
