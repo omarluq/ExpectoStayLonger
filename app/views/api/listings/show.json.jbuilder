@@ -1,1 +1,1 @@
-json.partial! "api/listings/listing", listing: @listing.with_attached_photos
+json.partial! "api/listings/listing", listing: @listing
