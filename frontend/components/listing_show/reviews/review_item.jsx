@@ -21,8 +21,8 @@ class Review extends React.Component {
     this.props.fetchListing(this.props.listingId);
   }
 
-  handleDelete(){
-    this.props.deleteReview(this.state.id)
+  handleDelete() {
+    this.props.deleteReview(this.state.id);
     this.props.fetchListing(this.props.listingId);
   }
 
@@ -31,9 +31,7 @@ class Review extends React.Component {
     if (this.props.session.id === this.state.author_id) {
       buttons = (
         <div>
-          <button onClick={() => this.handleDelete()}>
-            Delete Review
-          </button>
+          <button onClick={() => this.handleDelete()}>Delete Review</button>
           <br />
           <br />
           <button onClick={() => this.toggle()}>Edit Review</button>
@@ -59,12 +57,12 @@ class Review extends React.Component {
       );
     } else if (this.toggleview === "edit") {
       show = (
-        <li className="reviewitem" >
+        <li className="reviewitem">
           <form onSubmit={() => this.edit()}>
             <textarea
               className="reviewbody"
               value={this.state.body}
-              onChange={(e) => this.setState({['body']: e.target.value})}
+              onChange={(e) => this.setState({ ["body"]: e.target.value })}
             ></textarea>
             <br />
             <button className="reviewsubmit">submit</button>

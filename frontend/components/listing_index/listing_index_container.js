@@ -1,25 +1,17 @@
-import { connect } from 'react-redux'
-import React from 'react'
-import { fetchListings } from '../../actions/listing_actions'
-import ListingIndex from './listing_index'
-import { withRouter } from 'react-router'
-
-
-
+import { connect } from "react-redux";
+import React from "react";
+import { fetchListings } from "../../actions/listing_actions";
+import ListingIndex from "./listing_index";
+import { withRouter } from "react-router";
 
 const mapSTP = (state) => {
-    return {
-    listings: Object.values(state.listings)
-}}
+  return {
+    listings: Object.values(state.listings),
+  };
+};
 
+const mapDTP = (dispatch) => ({
+  fetchListings: (city) => dispatch(fetchListings(city)),
+});
 
-const mapDTP = dispatch => ({
-    fetchListings: city => dispatch(fetchListings(city))
-})
-
-
-export default connect(mapSTP, mapDTP)(ListingIndex)
-
-
-
-
+export default connect(mapSTP, mapDTP)(ListingIndex);

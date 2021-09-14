@@ -1,19 +1,18 @@
-import { connect } from 'react-redux';
-import React from 'react';
-import { fetchUser } from '../../actions/user_actions'
-import ShowUser from "./user_show"
+import { connect } from "react-redux";
+import React from "react";
+import { fetchUser } from "../../actions/user_actions";
+import ShowUser from "./user_show";
 
+const mapSTP = (state) => {
+  return {
+    user: Object.values(state.user),
+  };
+};
 
-const mapSTP = state => {
-    return {
-    user: Object.values(state.user)
-}}
+const mapDTP = (dispatch) => {
+  return {
+    fetchUser: (userId) => dispatch(fetchUser(userId)),
+  };
+};
 
-
-const mapDTP = dispatch =>{
-    return {
-    fetchUser: userId => dispatch(fetchUser(userId))
-}}
-
-
-export default connect(mapSTP, mapDTP)(ShowUser)
+export default connect(mapSTP, mapDTP)(ShowUser);

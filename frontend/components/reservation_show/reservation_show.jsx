@@ -32,10 +32,10 @@ class ShowReservation extends React.Component {
       .addTo(this.map);
   }
 
-  deleteRes(){
-    this.props.deleteReservation(this.props.reservation.id)
-    this.props.history.location.pathname = "/"
-    this.props.history.replace(`/`)
+  deleteRes() {
+    this.props.deleteReservation(this.props.reservation.id);
+    this.props.history.location.pathname = "/";
+    this.props.history.replace(`/`);
   }
 
   render() {
@@ -44,11 +44,7 @@ class ShowReservation extends React.Component {
     let button;
     if (start.getTime() > new Date().getTime()) {
       button = (
-        <button
-          onClick={() => this.deleteRes() }
-        >
-          Cancel Reservation
-        </button>
+        <button onClick={() => this.deleteRes()}>Cancel Reservation</button>
       );
     } else {
       button = <div></div>;
