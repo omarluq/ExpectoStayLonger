@@ -8,7 +8,7 @@ import { withRouter } from "react-router";
 const mapSTP = (state, ownProps) => ({
   review: {
     body: "",
-    rating: "",
+    rating: 1,
     reviewer_id: state.session.id,
     listing_id: ownProps.match.params.listingId,
   },
