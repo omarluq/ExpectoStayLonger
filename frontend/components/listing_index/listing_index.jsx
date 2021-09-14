@@ -6,14 +6,24 @@ import MapConatiner from "./map_container";
 class ListingIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {listings: this.props.listings}
   }
 
   componentDidMount() {
     this.props.fetchListings(this.props.match.params.city);
   }
 
+  componentDidUpdate(prevProps){
+    if (this.props.listings.length !== prevProps.listings.length){
+      this.setState({listings: this.props.listings})
+    }
+  }
+
   render() {
-    let listings = this.props.listings.map((listing, i) => (
+    console.log(this.state.listings);
+    console.log(this.props.listings);
+    
+    let listings = this.state.listings.map((listing, i) => (
       <ListingItem key={`${listing.title}${i}`} listing={listing} />
     ));
     return (
