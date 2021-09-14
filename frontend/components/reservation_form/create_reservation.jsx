@@ -87,7 +87,7 @@ class CreateReservation extends React.Component {
 
     return (
       <form onSubmit={(e) => this.handleSubmit(e)} className="resForm">
-        <h4>Book this property</h4>
+        <h4>Book this magical placr</h4>
         <br />
         <div className="resDates">
           <DateRange
