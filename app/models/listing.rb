@@ -3,6 +3,7 @@ class Listing < ApplicationRecord
     belongs_to :user, foreign_key: :host_id, class_name: :User
     has_many_attached :photos
     has_many :reservations, foreign_key: :listing_id, class_name: :Reservation
+    has_many :reviews, foreign_key: :listing_id, class_name: :Review
 
 
 end

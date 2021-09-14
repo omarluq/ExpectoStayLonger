@@ -1,6 +1,8 @@
 import { Button } from "@material-ui/core";
 import React from "react";
 import CreateReservationConatiner from "../reservation_form/create_reservation_container";
+import Review from "./reviews/review_item";
+
 class ListingShow extends React.Component {
   handleDelete() {
     this.props.deleteListing(this.props.match.params.listingId);
@@ -12,6 +14,7 @@ class ListingShow extends React.Component {
   }
 
   render() {
+    
     if (!this.props.listing) return null;
     let deleteButton;
     if (this.props.listing.host_id === this.props.session.id) {
@@ -21,6 +24,14 @@ class ListingShow extends React.Component {
     } else {
       deleteButton = <CreateReservationConatiner />;
     }
+    let reviews = this.props.listing.reviews.map((review)=> <Review review = {review} 
+                                                      fetchListing = {this.props.fetchListing} 
+                                                      listingId = {this.props.match.params.listingId} 
+                                                      editReview = {this.props.editReview}
+                                                      deleteReview = {this.props.deleteReview}
+                                                      session ={this.props.session}
+                                                      key ={review.id + review.author_id}
+                                                      />)
 
     let houseElf;
     let owlFriendly;
@@ -82,6 +93,9 @@ class ListingShow extends React.Component {
           <br />
           {deleteButton}
         </div>
+        <ul>
+          {reviews}
+        </ul>
       </div>
     );
   }

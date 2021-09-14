@@ -44,10 +44,6 @@ class CreateReservation extends React.Component {
         this.props.history.replace(`reservation/${res.reservation.id}`)
     }
 
-
-   
-
-
     componentDidUpdate(prevProps){
         if (this.props.reservation.guest_id !== prevProps.reservation.guest_id) this.setState({['guest_id']: this.props.reservation.guest_id});
     }

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :listings, except: [:edit, :new]
     resources :reservations, only: [:create, :destroy, :show]
+    resources :reviews, except: [:edit, :new]
   end
 end

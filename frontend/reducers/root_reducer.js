@@ -5,6 +5,7 @@ import userReducer from './user_reducer';
 import listingsReducer from './listings_reducer'
 import modalReducer from './modal_reducer'
 import reservationReducer from './reservation_reducer'
+import reviewReducer from './reservation_reducer'
 
 
 const rootReducer = combineReducers({
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
     errors: sessionErrorsReducer, 
     listings: listingsReducer,
     modal: modalReducer,
-    reservation: reservationReducer
+    reservation: reservationReducer,
+    review: reviewReducer
     
 })
 
