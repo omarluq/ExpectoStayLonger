@@ -24,7 +24,7 @@ class ShowReservation extends React.Component {
       zoom: 12,
     });
 
-    new mapboxgl.Marker()
+    new mapboxgl.Marker({color: 'teal'})
       .setLngLat([
         this.props.reservation.listing.longitude,
         this.props.reservation.listing.latitude,
