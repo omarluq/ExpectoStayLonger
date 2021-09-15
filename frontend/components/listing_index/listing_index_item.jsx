@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const ListingItem = (props) => {
   let houseElf;
   let owlFriendly;
-  console.log();
   if (props.listing.house_elf) {
     houseElf = (
       <p className="listingp">This listing comes with a staff of house elves</p>

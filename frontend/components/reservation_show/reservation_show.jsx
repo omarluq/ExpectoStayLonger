@@ -51,9 +51,7 @@ class ShowReservation extends React.Component {
     }
     start = `${start.getMonth() + 1}/${start.getDate()}/${start.getFullYear()}`;
     let end = new Date(this.props.reservation.end_date);
-    console.log(end);
     end = `${end.getMonth() + 1}/${end.getDate()}/${end.getFullYear()}`;
-    console.log(this.props.reservation.listing);
     return (
       <div className="respage">
         <div className="rescontainer">

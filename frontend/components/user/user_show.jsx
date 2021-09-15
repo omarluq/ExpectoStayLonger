@@ -1,7 +1,5 @@
-import { SignalCellularNullSharp } from "@material-ui/icons";
 import React from "react";
 import { Link } from "react-router-dom";
-import ListingItem from "../listing_index/listing_index_item";
 
 class ShowUser extends React.Component {
   constructor(props) {
@@ -9,7 +7,13 @@ class ShowUser extends React.Component {
   }
 
   render() {
-    if (!this.props.user) return SignalCellularNullSharp;
+    if (!this.props.user) return null;
+    let reservations = this.props.user[0].user_reservations.map((reservation, i) =>(
+      <li className="showlisting" key={`${reservation}${i}`}>
+        <img src={reservation.photo[0]} className="resphotouser" />
+        <Link className="link" to={`/reservation/${reservation.id}`}>{reservation.res_listing.title} in {reservation.res_listing.city}</Link>
+      </li>
+    ))
     let listings = this.props.user[0].user_listing.map((listing, i) => (
       <Link className="imglink" to={`/listing/${listing.id}`}>
         <li className="showlisting" key={`${listing} ${i}`}>
@@ -47,7 +51,8 @@ class ShowUser extends React.Component {
         </ul>
 
         <ul className="userlistings">
-          <h4 className="titles">Reviews by you</h4>
+          <h4 className="titles">Your trips</h4>
+          {reservations}
         </ul>
       </div>
     );

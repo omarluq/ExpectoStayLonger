@@ -48,7 +48,6 @@ class ListingShow extends React.Component {
 
     let houseElf;
     let owlFriendly;
-    console.log();
     if (this.props.listing.house_elf) {
       houseElf = <p>This listing comes with a staff of house elves</p>;
     } else {

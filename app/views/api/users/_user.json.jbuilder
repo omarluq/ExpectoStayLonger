@@ -4,6 +4,7 @@ json.user_listing user.listings.with_attached_photos.each do |listing|
     json.photos listing.photos.map {|photo| url_for(photo)}
 end
 json.user_reservations user.reservations.each do |reservation|
-    json.extract! reservation, :start_date, :end_date, :total_price
-    json.res_listing reservation.listing, :id, :title
+    json.extract! reservation, :start_date, :end_date, :total_price, :id
+    json.res_listing reservation.listing, :id, :title, :city
+    json.photo reservation.listing.photos.map{|photo| url_for(photo)}
 end
