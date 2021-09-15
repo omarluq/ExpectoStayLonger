@@ -35,7 +35,7 @@ class ShowUser extends React.Component {
       <div className="usershow">
         <div className="userInfo">
           <h4 className="titles">
-            Hi {this.props.user[0].name} this is your profile info
+            Welcome to {this.props.user[0].name}'s profile 
           </h4>
           <p>{this.props.user[0].bio}</p>
         </div>
