@@ -112,7 +112,7 @@
     }
 
     .img{
-        background-image: url(<%= asset_path "landingpage.jpg" %>);
+        background-image: image-url( "landingpage.jpg" );
         width: 100vw;
         height: 90vh;
         background-size: cover;
@@ -194,7 +194,7 @@
 
    .logo {
        display: flex;
-       background-image: url(<%= asset_path "logo3.png" %>);
+       background-image: image-url( "logo3.png" );
        background-repeat: no-repeat;
        width: 490px;
        height: 100px;
@@ -357,7 +357,7 @@
 
 
      .snape{
-        background-image: url(<%= asset_path "snape.png" %>);
+        background-image: image-url( "snape.png" );
         width: 40vw;
         height: 70vh;
         background-repeat: no-repeat;
@@ -638,7 +638,7 @@
 
 
 .sorting-hat{
-    background-image: url(<%= asset_path "sortinghat.jpg" %>);
+    background-image: image-url( "sortinghat.jpg" );
     height: 109px;
     background-repeat: no-repeat;
     width: 150px;
@@ -649,7 +649,7 @@
 }
 
 .room{
-    background-image: url(<%= asset_path "room.jpg" %>);
+    background-image: image-url( "room.jpg" );
     height: 109px;
     background-repeat: no-repeat;
     width: 150px;
@@ -661,7 +661,7 @@
 }
 
 .patronus{
-    background-image: url(<%= asset_path "deer.jpg" %>);
+    background-image: image-url( "deer.jpg" );
     height: 109px;
     background-repeat: no-repeat;
     width: 150px;
@@ -672,7 +672,7 @@
 }
 
 .hallows{
-    background-image: url(<%= asset_path "deathlyhallows" %>);
+    background-image: image-url( "deathlyhallows" );
     height: 109px;
     background-repeat: no-repeat;
     width: 150px;
@@ -684,7 +684,7 @@
 
 
 .ollivanders{
-    background-image: url(<%= asset_path "ollivanders" %>);
+    background-image: image-url( "ollivanders" );
     height: 109px;
     background-repeat: no-repeat;
     width: 150px;
@@ -696,7 +696,7 @@
 
 
 .broomstick {
-    background-image: url(<%= asset_path "firebolt.jpg" %>);
+    background-image: image-url( "firebolt.jpg" );
     height: 109px;
     background-repeat: no-repeat;
     width: 150px;
