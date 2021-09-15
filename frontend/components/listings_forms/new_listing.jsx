@@ -1,6 +1,7 @@
 import React from "react";
 import mbxGeocoding from "@mapbox/mapbox-sdk/services/geocoding";
 import mapboxgl from "!mapbox-gl";
+import Modal from "../landingpage/modal_container";
 
 class NewListing extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class NewListing extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.spinner();
     mapboxgl.accessToken =
       "pk.eyJ1Ijoib21hcmx1cSIsImEiOiJja3RhOGt0N3UxanE2MnduMWNsNW9lMXdnIn0.EmKLSdfjJDUYIIW8wieFLw";
     const geocoder = mbxGeocoding({
@@ -58,6 +60,7 @@ class NewListing extends React.Component {
           formData.append("listing[photos][]", this.state.photos[i]);
         }
         this.props.createListing(formData).then((res) => {
+          this.props.closeSpinner()
           this.props.history.replace(`/listing/${res.listing.id}`);
         });
       });
@@ -66,6 +69,7 @@ class NewListing extends React.Component {
   render() {
     return (
       <div className="new-listing-div">
+         <Modal />
         <form className="newlistingform" onSubmit={(e) => this.handleSubmit(e)}>
           <br />
           <h4>Hey! Listing a new Magical place?</h4>
@@ -169,6 +173,7 @@ class NewListing extends React.Component {
           <button className="newformbutton">Finish</button>
         </form>
         <div className="snape"></div>
+        {/* <button onClick={()=>this.props.spinner()}></button> */}
       </div>
     );
   }

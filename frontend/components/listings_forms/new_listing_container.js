@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import React from "react";
 import { createListing } from "../../actions/listing_actions";
 import NewListing from "./new_listing";
+import { openModal, closeModal } from "../../actions/modal_actions";
 
 const mapSTP = (state) => ({
   listing: {
@@ -27,6 +28,8 @@ const mapSTP = (state) => ({
 
 const mapDTP = (dispatch) => ({
   createListing: (listing) => dispatch(createListing(listing)),
+  spinner: ()=> dispatch(openModal("spinner")),
+  closeSpinner: () => dispatch(closeModal())
 });
 
 export default connect(mapSTP, mapDTP)(NewListing);

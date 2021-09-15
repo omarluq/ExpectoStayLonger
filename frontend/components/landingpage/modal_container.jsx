@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import LoginFormContainer from "../session_form/login_form_container";
 import SignupFormContainer from "../session_form/singup_form_container";
 import { Divider } from "@material-ui/core";
+import Spinner from "../spinner/spinner";
 
 const Modal = (props) => {
   if (!props.modal) {
@@ -16,6 +17,9 @@ const Modal = (props) => {
       break;
     case "signup":
       component = <SignupFormContainer />;
+      break;
+    case "spinner":
+      component = <Spinner/>
       break;
     default:
       return null;
