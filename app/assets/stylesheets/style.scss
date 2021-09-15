@@ -952,13 +952,13 @@
     background-image: image-url("loader.png");
     width: 260px;
     height: 300px;
-    animation-name: spin;
+    animation-name: spinit;
     animation-duration: 1500ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
 
-@keyframes spin {
+@keyframes spinit {
     from {
         transform: rotate(0deg);
     }
