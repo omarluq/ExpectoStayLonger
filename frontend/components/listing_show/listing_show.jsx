@@ -34,6 +34,10 @@ class ListingShow extends React.Component {
       deleteButton = <CreateReservationConatiner />;
       createReview = <CreateReviewContainer />;
     }
+    if (!this.props.session.id){
+      createReview = <div></div>;
+    }
+
     let reviews = this.props.listing.reviews.map((review) => (
       <Review
         review={review}
