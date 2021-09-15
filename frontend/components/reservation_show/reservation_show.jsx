@@ -42,14 +42,14 @@ class ShowReservation extends React.Component {
     if (Object.values(this.props.reservation).length === 0) return null;
     let start = new Date(this.props.reservation.start_date);
     let button;
-    // if (start.getTime() > new Date().getTime()) {
-    //   button = (
-    //     <button onClick={() => this.deleteRes()}>Cancel Reservation</button>
-    //   );
-    // } else {
-    //   button = <div></div>;
-    // }
-     button = <button onClick={() => this.deleteRes()}>Cancel Reservation</button>
+    debugger
+    if (start.getTime() > new Date().getTime()) {
+      button = (
+        <button onClick={() => this.deleteRes()}>Cancel Reservation</button>
+      );
+    } else {
+      button = <div></div>;
+    }
     start = `${start.getMonth() + 1}/${start.getDate()}/${start.getFullYear()}`;
     let end = new Date(this.props.reservation.end_date);
     end = `${end.getMonth() + 1}/${end.getDate()}/${end.getFullYear()}`;
