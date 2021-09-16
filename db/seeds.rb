@@ -79,11 +79,17 @@ listing1 = Listing.create!(
     latitude: 53.1921
 )
 
-file1 = open("app/assets/images/malfoymanor1.jpg")
-listing1.photos.attach(io: file1, filename: 'malfoymanor1.jpg')
+file01 = open("app/assets/images/malfoymanor0.webp")
+listing1.photos.attach(io: file01, filename: 'malfoymanor0.webp')
 
 file11 = open("app/assets/images/malfoymanor2.jpg")
 listing1.photos.attach(io: file11, filename: 'malfoymanor2.jpg')
+
+file1 = open("app/assets/images/malfoymanor1.jpg")
+listing1.photos.attach(io: file1, filename: 'malfoymanor1.jpg')
+
+file111 = open("app/assets/images/malfoymanor3.jpg")
+listing1.photos.attach(io: file111, filename: 'malfoymanor3.jpg')
 
 listing2 = Listing.create!(
     title: '4 privet drive cupboard under stairs',
@@ -104,6 +110,14 @@ listing2 = Listing.create!(
 file2 = open("app/assets/images/cupboard.jpg")
 listing2.photos.attach(io: file2, filename: 'cupboard.jpg')
 
+file22 = open("app/assets/images/cupboard2.jpg")
+listing2.photos.attach(io: file22, filename: 'cupboard2.jpg')
+
+file222 = open("app/assets/images/cupboard3.jpg")
+listing2.photos.attach(io: file222, filename: 'cupboard3.jpg')
+
+file2222 = open("app/assets/images/cupboard4.jpg")
+listing2.photos.attach(io: file2222, filename: 'cupboard4.jpg')
 
 
 listing3 = Listing.create!(
@@ -122,8 +136,17 @@ listing3 = Listing.create!(
     latitude: 51.530689
 )
 
+file03 = open("app/assets/images/number120.png")
+listing3.photos.attach(io: file03, filename: 'number120.jpg')
+
 file3 = open("app/assets/images/number12.jpg")
 listing3.photos.attach(io: file3, filename: 'number12.jpg')
+
+file33 = open("app/assets/images/number121.jpg")
+listing3.photos.attach(io: file33, filename: 'number121.jpg')
+
+file333 = open("app/assets/images/number123.jpg")
+listing3.photos.attach(io: file333, filename: 'number123.jpg')
 
 
 listing4 = Listing.create!(
@@ -142,11 +165,22 @@ listing4 = Listing.create!(
     latitude: 50.485204974636076
 )
 
-file4 = open("app/assets/images/theburrow.jpg")
-listing4.photos.attach(io: file4, filename: 'theburrow.jpg')
 
 file44 = open("app/assets/images/theburrow2.jpg")
 listing4.photos.attach(io: file44, filename: 'theburrow2.jpg')
+
+file4 = open("app/assets/images/theburrow.jpg")
+listing4.photos.attach(io: file4, filename: 'theburrow.jpg')
+
+file444 = open("app/assets/images/theburrow3.jpg")
+listing4.photos.attach(io: file444, filename: 'theburrow3.jpg')
+
+file4444 = open("app/assets/images/theburrow4.jpg")
+listing4.photos.attach(io: file4444, filename: 'theburrow4.jpg')
+
+
+
+
 
 
 listing5 = Listing.create!(
@@ -171,6 +205,11 @@ listing5.photos.attach(io: file5, filename: 'ShriekingShack.jpg')
 file55 = open("app/assets/images/ShriekingShack2.jpg")
 listing5.photos.attach(io: file55, filename: 'ShriekingShack2.jpg')
 
+file555 = open("app/assets/images/ShriekingShack1.jpg")
+listing5.photos.attach(io: file555, filename: 'ShriekingShack1.jpg')
+
+file5555 = open("app/assets/images/ShriekingShack4.jpg")
+listing5.photos.attach(io: file5555, filename: 'ShriekingShack4.jpg')
 
 
 
@@ -191,8 +230,16 @@ listing6 = Listing.create!(
     latitude: 49.958933721931174
 )
 
+
+file06 = open("app/assets/images/shellcottage0.png")
+listing6.photos.attach(io: file06, filename: 'shellcottage0.jpg')
+
 file6 = open("app/assets/images/shellcottage.jpg")
 listing6.photos.attach(io: file6, filename: 'shellcottage.jpg')
 
 file66 = open("app/assets/images/shellcottage2.jpg")
 listing6.photos.attach(io: file66, filename: 'shellcottage2.jpg')
+
+
+file6666 = open("app/assets/images/shellcottage4.jpg")
+listing6.photos.attach(io: file6666, filename: 'shellcottage4.jpg')

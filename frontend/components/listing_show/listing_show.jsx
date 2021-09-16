@@ -14,6 +14,10 @@ class ListingShow extends React.Component {
     this.props.fetchListing(this.props.match.params.listingId);
   }
 
+  refersh(){
+    this.props.fetchListing(this.props.match.params.listingId);
+  }
+
   render() {
     if (!this.props.listing) return null;
     let deleteButton;
@@ -32,7 +36,7 @@ class ListingShow extends React.Component {
       createReview = <div></div>;
     } else {
       deleteButton = <CreateReservationConatiner />;
-      createReview = <CreateReviewContainer />;
+      createReview = <CreateReviewContainer refresh={this.refersh.bind(this)} />;
     }
     if (!this.props.session.id){
       createReview = <div></div>;
@@ -41,11 +45,11 @@ class ListingShow extends React.Component {
     let reviews = this.props.listing.reviews.map((review) => (
       <Review
         review={review}
-        fetchListing={this.props.fetchListing}
         listingId={this.props.match.params.listingId}
         editReview={this.props.editReview}
         deleteReview={this.props.deleteReview}
         session={this.props.session}
+        refresh={this.refersh.bind(this)}
         key={review.id + review.author_id}
       />
     ));

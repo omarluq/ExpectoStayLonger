@@ -18,12 +18,13 @@ class Review extends React.Component {
     } else {
       this.toggleview = "show";
     }
-    this.props.fetchListing(this.props.listingId);
+    this.props.refresh()
   }
 
   handleDelete() {
     this.props.deleteReview(this.state.id);
-    this.props.fetchListing(this.props.listingId);
+    this.props.refresh()
+
   }
 
   render() {

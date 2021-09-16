@@ -16,7 +16,7 @@ class CreateReview extends React.Component {
     e.preventDefault();
     this.props.createReview(this.state);
     this.setState({ ["body"]: "", ["rating"]: "1" });
-    this.props.fetchListing(this.props.match.params.listingId);
+    this.props.refresh()
   }
 
   render() {
