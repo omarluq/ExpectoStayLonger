@@ -1,24 +1,49 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<p align="center">
+  <img src="https://github.com/omarluq/ExpectoStayLonger/blob/main/app/assets/images/logo3.png" />
+</p>
 
-Things you may want to cover:
+[ExpectoStayLonger](https://expectostaylonger.herokuapp.com/?#/) is an airbnb inspired clone with a harry potter fantacy theme added to it, the site was developed using a ROR/React-Redux stack.
 
-* Ruby version
 
-* System dependencies
+<p align="center">
+  <img src="https://github.com/omarluq/ExpectoStayLonger/blob/main/app/assets/images/screenshot1.png" />
+</p>
 
-* Configuration
+<p align="center">
+  <img src="https://github.com/omarluq/ExpectoStayLonger/blob/main/app/assets/images/screenshot2.png" />
+</p>
 
-* Database creation
+## installation instruction
+ * Clone the repo using the command `git clone https://github.com/omarluq/ExpectoStayLonger.git`
+ * Run the command `npm install`
+ * Run the command `bundle install`
+ * Run the command `npm run start`
+ * Run the command `rails s`
 
-* Database initialization
+## Technologies used
+ * Ruby on rails for backend 
+ * postgreSQL for DB 
+ * React-redux for frontend
+ * Mapbox API
+ * React-date-range API
+ * AWS
 
-* How to run the test suite
+## Features
+ * Create a personal account 
+ * Log in using our demo user 
+ * Create a new listing and upload pictures with it (up to 4 pictures)
+ * Reserve a listing / Cancel reservations 
 
-* Services (job queues, cache servers, search engines, etc.)
+## Development
+  We made sure that a listing can only be booked on available days by ensuring to block the reserved days, the below code shows you how we did that 
+  
+  <p align="center">
+  <img src="https://github.com/omarluq/ExpectoStayLonger/blob/main/app/assets/images/screenshot4.png" />
+</p>
 
-* Deployment instructions
-
-* ...
+## found a 🐛 ?
+ Feel free to file a new issue with a respective title and description on ExpectoStatyLonger repository.
+ 
+ 
