@@ -42,7 +42,6 @@ class ShowReservation extends React.Component {
     if (Object.values(this.props.reservation).length === 0) return null;
     let start = new Date(this.props.reservation.start_date);
     let button;
-    debugger
     if (start.getTime() > new Date().getTime()) {
       button = (
         <button onClick={() => this.deleteRes()}>Cancel Reservation</button>
