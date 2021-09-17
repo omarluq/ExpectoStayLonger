@@ -25,7 +25,9 @@
 ## Technologies used
  * Ruby on Rails for backend 
  * PostgreSQL for DB 
+ * JBuilder 
  * React-Redux for frontend
+ * JQuery
  * Mapbox API
  * React-date-range API
  * AWS
@@ -37,11 +39,11 @@
  * Reserve a listing / Cancel reservations 
 
 ## Development
-  We made sure that a listing can only be booked on available days by ensuring to block the reserved days, the below code shows you how we did that 
+  We made sure that a listing can only be booked on available dates by blocking the reserved ones, the below code shows you how we did that 
   
   <p align="center">
-  <img src="https://github.com/omarluq/ExpectoStayLonger/blob/main/app/assets/images/screenshot6.png" />
-</p>
+   <img src="https://github.com/omarluq/ExpectoStayLonger/blob/main/app/assets/images/screenshot6.png" />
+  </p>
 
 ## found a 🐛 ?
  Feel free to file a new issue with a respective title and description on ExpectoStatyLonger repository.
