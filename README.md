@@ -4,7 +4,7 @@
   <img src="https://github.com/omarluq/ExpectoStayLonger/blob/main/app/assets/images/logo3.png" />
 </p>
 
-[ExpectoStayLonger](https://expectostaylonger.herokuapp.com/?#/) is an airbnb inspired clone with a Harry Potter fantasy theme, the site was developed using a ROR/React-Redux stack.
+#### [ExpectoStayLonger](https://expectostaylonger.herokuapp.com/?#/) is an airbnb inspired clone with a Harry Potter fantasy theme, the site was developed using a ROR/React-Redux stack.
 
 
 <p align="center">
