@@ -17,8 +17,11 @@
 
 ## Installation instructions
  * Clone the repo using the command `git clone https://github.com/omarluq/ExpectoStayLonger.git`
+ * Ensure to have postgreSQL installed and running 
  * Run the command `npm install`
  * Run the command `bundle install`
+ * Run the command `rails db:create`
+ * Run the command `rails db:setup`
  * Run the command `npm run start`
  * Run the command `rails s`
 
