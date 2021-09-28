@@ -87,6 +87,7 @@
         position: sticky;
         top: 0;
         background-color: transparent;
+        z-index: 10;
     }
 
     .on-scroll{
@@ -96,7 +97,7 @@
         position: sticky;
         top: 0;
         background-color: white;
-        z-index: 1;
+        z-index: 10;
         box-shadow: 0 3px 20px rgba(0,0,0, 1);
     }
 
