@@ -5,6 +5,7 @@ class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.user;
+    this.demo = { email: "dobbythehouseelef@gmail.com", password: 123456 }
   }
 
   handleSubmit(e) {
@@ -19,8 +20,8 @@ class LoginForm extends React.Component {
   }
 
   demoUser(e) {
-    this.setState({ email: "dobbythehouseelef@gmail.com", password: 123456 });
-    this.props.login(this.state);
+    e.preventDefault()
+    this.props.login(this.demo).then((res)=> this.props.closeModal());
   }
 
   componentWillUnmount() {
