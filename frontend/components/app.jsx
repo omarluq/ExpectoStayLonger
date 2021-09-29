@@ -34,7 +34,7 @@ const App = (props) => {
       />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <Route
+      <ProtectedRoute
         exact
         path="/reservation/:resId"
         component={ShowReservationContainer}
