@@ -1,4 +1,4 @@
-import {RECEIVE_LISTINGS, RECEIVE_LISTING, REMOVE_LISTING} from "../actions/listing_actions"
+import {RECEIVE_LISTINGS, RECEIVE_LISTING, REMOVE_LISTING, LISTING_ERRORS} from "../actions/listing_actions"
 
 
 

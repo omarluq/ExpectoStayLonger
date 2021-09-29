@@ -7,6 +7,7 @@ class NewListing extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.listing;
+    this.errors = null 
   }
 
   handleChange(field) {
@@ -38,10 +39,11 @@ class NewListing extends React.Component {
       .send()
       .then((response) => {
         this.setState({ host_id: this.props.session.id });
+        if (response.body.features.length > 0 ){
         this.setState({
           longitude: response.body.features[0].center[0],
           latitude: response.body.features[0].center[1],
-        });
+        })
         const formData = new FormData();
         formData.append("listing[host_id]", this.state.host_id);
         formData.append("listing[title]", this.state.title);
@@ -60,11 +62,27 @@ class NewListing extends React.Component {
           formData.append("listing[photos][]", this.state.photos[i]);
         }
         this.props.createListing(formData).then((res) => {
+          
           this.props.closeSpinner()
           this.props.history.replace(`/listing/${res.listing.id}`);
-        });
+          
+        }, err => {
+          this.props.closeSpinner()
+          this.errors = <p>Something went wrong! please make sure to fill all fields proprley.</p>
+          this.forceUpdate()
+        })} else {
+          this.wrongAddress()
+        }
       });
   }
+
+  wrongAddress(){
+    this.props.closeSpinner()
+    this.errors = <p>The Address you have entered is invalid! please enter a valid address</p>
+    this.forceUpdate()
+  }
+
+
 
   render() {
     return (
@@ -171,6 +189,8 @@ class NewListing extends React.Component {
           </label>
           <br />
           <button className="newformbutton">Finish</button>
+          <br />
+          {this.errors}
         </form>
         <div className="snape"></div>
         {/* <button onClick={()=>this.props.spinner()}></button> */}

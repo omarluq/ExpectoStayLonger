@@ -5,6 +5,7 @@ import * as listingApi from "../util/listings_api_util"
 export const RECEIVE_LISTINGS = "RECEIVE_LISTINGS"
 export const RECEIVE_LISTING = "RECEIVE_LISTING"
 export const REMOVE_LISTING = "REMOVE_LISTING"
+export const LISTING_ERRORS = 'LISTING_ERRORS'
 
 
 
@@ -22,6 +23,8 @@ const removeListing = listingId => ({
     type: REMOVE_LISTING,
     listingId
 })
+
+
 
 
 export const fetchListings = (city) => dispatch => (
