@@ -37,7 +37,6 @@ class Api::ListingsController < ApplicationController
             city = params[:city].split(' ').map{|word| word.capitalize()}.join(' ')
             @listings = Listing.with_attached_photos.find_by_city(city)
             render :index
-          
         else 
             @listings = Listing.with_attached_photos.all
             render :index 
