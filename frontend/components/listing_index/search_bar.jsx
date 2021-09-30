@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { city: "" };
+    this.state = { city: "all" };
   }
 
   redirect() {
@@ -15,11 +15,14 @@ class SearchBar extends React.Component {
 
   handleChange(e) {
     this.setState({ city: e.target.value });
+    if (e.targer.value === ''){
+      this.setState({ city: "all" })
+    }
   }
 
   render() {
     return (
-      <form className="search">
+      <form className="search" onSubmit={() => this.redirect()}>
         <label className="searchlabel">
           {" "}
           CheckIn
@@ -42,7 +45,7 @@ class SearchBar extends React.Component {
             placeholder="city"
           />
         </label>
-        <button onClick={() => this.redirect()}>
+        <button >
           <SearchIcon />
         </button>
       </form>

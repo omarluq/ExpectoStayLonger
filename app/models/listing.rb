@@ -6,4 +6,9 @@ class Listing < ApplicationRecord
     has_many :reviews, foreign_key: :listing_id, class_name: :Review
 
 
+
+    def self.find_by_city(city)
+        Listing.where('city LIKE ?', city)
+    end
+
 end
