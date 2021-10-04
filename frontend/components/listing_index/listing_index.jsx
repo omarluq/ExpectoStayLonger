@@ -7,38 +7,52 @@ class ListingIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        listings: this.props.listings
-      }
+      listings: this.props.listings,
+      city: this.props.match.params.city,
+    };
   }
 
   componentDidMount() {
     this.props.fetchListings(this.props.match.params.city);
   }
-s
-  componentDidUpdate(prevProps){
-    if (this.props.match.params.city !== prevProps.match.params.city){
-      
-      this.props.fetchListings(this.props.match.params.city);
-      this.setState({listings: this.props.listings});
-      console.log(this.state.listings);
-      this.forceUpdate()
+
+  componentDidUpdate(nextProps) {
+    if (nextProps.city != this.props.match.params.city) {
+      this.props.fetchListings(nextProps.match.params.city);
     }
-    if (this.props.listings.length !== prevProps.listings.length){
-      this.setState({listings: this.props.listings})
-      this.forceUpdate()
-    }
-   
+  }
+
+  static getDerivedStateFromProps(nextProps, prevState) {
+    return {
+      listings: nextProps.listings,
+      city: nextProps.city,
+    };
   }
 
   render() {
+    let msg;
+    if (!this.state.listings.length) {
+      msg = (
+        <p className="msg">
+          No listings found at {this.props.match.params.city}
+        </p>
+      );
+    } else {
+      msg = null;
+    }
     let listings = this.state.listings.map((listing, i) => (
-      <ListingItem key={`${listing.title}${i}${this.state.listings.length}`} listing={listing} />
+      <ListingItem
+        key={`${listing.title}${i}${this.state.listings.length}`}
+        listing={listing}
+      />
     ));
     return (
       <div className="stays" id="stays">
         <ul className="listings">
           <h4 className="wizarding">Stays in the wizarding world</h4>
           {listings}
+          <br />
+          {msg}
         </ul>
         <MapConatiner />
       </div>

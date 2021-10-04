@@ -5,36 +5,22 @@ import { withRouter } from "react-router";
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { city: "all" };
+    this.state = { city: '' };
   }
 
   redirect() {
     this.props.history.location.pathname = "/";
     this.props.history.replace(`listings/${this.state.city}`);
+    this.setState({city: ''})
   }
 
   handleChange(e) {
-    this.setState({ city: e.target.value });
-    if (e.targer.value === ''){
-      this.setState({ city: "all" })
-    }
+      this.setState({ city: e.target.value });
   }
 
   render() {
     return (
       <form className="search" onSubmit={() => this.redirect()}>
-        <label className="searchlabel">
-          {" "}
-          CheckIn
-          <br />
-          <input className="date" type="date" placeholder="Date" />
-        </label>
-        <label className="searchlabel">
-          {" "}
-          Checkout
-          <br />
-          <input className="date" type="date" placeholder="Date" />
-        </label>
         <label className="searchlabel">
           Location:
           <br />
