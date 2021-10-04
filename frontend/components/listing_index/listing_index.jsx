@@ -17,12 +17,19 @@ class ListingIndex extends React.Component {
   }
 
   componentDidUpdate(nextProps) {
-    if (nextProps.city != this.props.match.params.city) {
+    // console.log(this.state.city);
+    if (nextProps.match.params.city !== this.props.match.params.city) {
+      console.log(nextProps.match.params.city);
+      console.log(this.props.match.params.city);
       this.props.fetchListings(nextProps.match.params.city);
+      // this.forceUpdate()
+      this.setState({city: nextProps.match.params.city})
     }
   }
 
+
   static getDerivedStateFromProps(nextProps, prevState) {
+   
     return {
       listings: nextProps.listings,
       city: nextProps.city,
