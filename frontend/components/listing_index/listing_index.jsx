@@ -12,7 +12,7 @@ class ListingIndex extends React.Component {
     };
   }
 
-  componentDidMount() {<s></s>
+  componentDidMount() {
     this.props.fetchListings(this.props.match.params.city)
   }
 
@@ -29,7 +29,7 @@ class ListingIndex extends React.Component {
 
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log(nextProps.match.params.city);
+    // console.log(nextProps.match.params.city);
     if (nextProps.match.params.city){
       if( nextProps.match.params.city !== prevState.city){
         nextProps.fetchListings(nextProps.match.params.city)
