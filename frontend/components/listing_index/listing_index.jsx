@@ -12,8 +12,8 @@ class ListingIndex extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.props.fetchListings(this.props.match.params.city);
+  componentDidMount() {<s></s>
+    this.props.fetchListings(this.props.match.params.city)
   }
 
   // componentDidUpdate(nextProps) {
@@ -29,13 +29,17 @@ class ListingIndex extends React.Component {
 
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    if(nextProps.match.params.city !== prevState.city){
-      nextProps.fetchListings(nextProps.match.params.city)
+    console.log(nextProps.match.params.city);
+    if (nextProps.match.params.city){
+      if( nextProps.match.params.city !== prevState.city){
+        nextProps.fetchListings(nextProps.match.params.city)
+      } 
     }
+
     return {
       listings: nextProps.listings,
       city: nextProps.match.params.city,
-    };
+    }
   }
 
   render() {
@@ -43,7 +47,7 @@ class ListingIndex extends React.Component {
     if (!this.state.listings.length) {
       msg = (
         <p className="msg">
-          No listings found at {this.props.match.params.city}
+          No listings found in {this.props.match.params.city}
         </p>
       );
     } else {
