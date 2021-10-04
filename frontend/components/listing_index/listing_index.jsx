@@ -16,23 +16,25 @@ class ListingIndex extends React.Component {
     this.props.fetchListings(this.props.match.params.city);
   }
 
-  componentDidUpdate(nextProps) {
-    // console.log(this.state.city);
-    if (nextProps.match.params.city !== this.props.match.params.city) {
-      console.log(nextProps.match.params.city);
-      console.log(this.props.match.params.city);
-      this.props.fetchListings(nextProps.match.params.city);
-      // this.forceUpdate()
-      this.setState({city: nextProps.match.params.city})
-    }
-  }
+  // componentDidUpdate(nextProps) {
+  //   // console.log(this.state.city);
+  //   if (nextProps.match.params.city !== this.props.match.params.city) {
+  //     console.log(nextProps.match.params.city);
+  //     console.log(this.props.match.params.city);
+  //     this.props.fetchListings(nextProps.match.params.city);
+  //     // this.forceUpdate()
+  //     this.setState({city: nextProps.match.params.city})
+  //   }
+  // }
 
 
   static getDerivedStateFromProps(nextProps, prevState) {
-   
+    if(nextProps.match.params.city !== prevState.city){
+      nextProps.fetchListings(nextProps.match.params.city)
+    }
     return {
       listings: nextProps.listings,
-      city: nextProps.city,
+      city: nextProps.match.params.city,
     };
   }
 
@@ -49,7 +51,7 @@ class ListingIndex extends React.Component {
     }
     let listings = this.state.listings.map((listing, i) => (
       <ListingItem
-        key={`${listing.title}${i}${this.state.listings.length}`}
+        key={`${i} + ${this.state.listings.length}`}
         listing={listing}
       />
     ));
