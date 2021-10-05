@@ -9,7 +9,7 @@ class SearchBar extends React.Component {
   }
 
   redirect() {
-    this.props.history.location.pathname = "/"
+    // this.props.history.location.pathname = "/"
     this.props.history.replace(`listings/${this.state.city}`)
   }
 
