@@ -8,13 +8,13 @@ class ListingIndex extends React.Component {
     super(props);
     this.state = {
       listings: this.props.listings,
-      city: 'all'
+      city: this.props.match.params.city,
     };
-    // city: this.props.match.params.city,
+    // city: 'all'
   }
 
   componentDidMount() {
-    this.props.fetchListings(this.props.match.params.city)
+    this.props.fetchListings(this.state.city)
   }
 
   // componentDidUpdate(nextProps) {
@@ -41,6 +41,7 @@ class ListingIndex extends React.Component {
     }
 
   render() {
+    console.log(this.state.listings);
     let msg;
     if (!this.state.listings.length) {
       msg = (
