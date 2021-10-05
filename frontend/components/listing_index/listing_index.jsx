@@ -66,7 +66,7 @@ class ListingIndex extends React.Component {
           <br />
           {msg}
         </ul>
-        <MapConatiner city={this.state.city}/>
+        <MapConatiner city={this.state.city} listings={this.props.listings}/>
       </div>
     );
   }
