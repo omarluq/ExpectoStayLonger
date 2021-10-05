@@ -5,16 +5,19 @@ import { withRouter } from "react-router";
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { city: '' };
+    this.state = { city: 'all' };
   }
 
   redirect() {
-    this.props.history.location.pathname = "/";
-    this.props.history.replace(`listings/${this.state.city}`);
+    this.props.history.location.pathname = "/"
+    this.props.history.replace(`listings/${this.state.city}`)
   }
 
   handleChange(e) {
-      this.setState({ city: e.target.value });
+      this.setState({ city: e.target.value })
+      if(e.target.value === ''){
+        this.setState({ city: 'all' })
+      }
   }
 
   render() {

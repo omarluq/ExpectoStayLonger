@@ -8,8 +8,9 @@ class ListingIndex extends React.Component {
     super(props);
     this.state = {
       listings: this.props.listings,
-      city: this.props.match.params.city,
+      city: 'all'
     };
+    // city: this.props.match.params.city,
   }
 
   componentDidMount() {
@@ -30,17 +31,18 @@ class ListingIndex extends React.Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     // console.log(nextProps.match.params.city);
-    if (nextProps.match.params.city){
+    
+      console.log(nextProps.match.params.city !== prevState.city)
       if( nextProps.match.params.city !== prevState.city){
+        console.log('im working')
         nextProps.fetchListings(nextProps.match.params.city)
+        
+      } 
+      return {
+        listings: nextProps.listings,
+        city: nextProps.match.params.city,
       } 
     }
-
-    return {
-      listings: nextProps.listings,
-      city: nextProps.match.params.city,
-    }
-  }
 
   render() {
     let msg;
