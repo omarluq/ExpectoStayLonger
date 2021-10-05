@@ -8,6 +8,7 @@ class Map extends React.Component {
   }
 
   componentDidMount() {
+    // debugger
     this.props.fetchListings(this.props.city);
     mapboxgl.accessToken =
       "pk.eyJ1Ijoib21hcmx1cSIsImEiOiJja3RhOGt0N3UxanE2MnduMWNsNW9lMXdnIn0.EmKLSdfjJDUYIIW8wieFLw";

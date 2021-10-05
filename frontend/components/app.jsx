@@ -19,7 +19,7 @@ const App = (props) => {
       <HeaderConatiner />
       <ModalContainer />
       <Route exact path="/listings/:city" component={ListingIndexContainer} />
-      <Route exact path="/listings/" component={ListingIndexContainer} />
+      {/* <Route exact path="/listings/" component={ListingIndexContainer} /> */}
       <Route exact path="/" component={LandingPageContainer} />
       <Route exact path="/listing/:listingId" component={ListingShow} />
       <ProtectedRoute
