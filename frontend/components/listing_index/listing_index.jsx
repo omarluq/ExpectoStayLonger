@@ -30,13 +30,9 @@ class ListingIndex extends React.Component {
 
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    // console.log(nextProps.match.params.city);
     
-      console.log(nextProps.match.params.city !== prevState.city)
       if( nextProps.match.params.city !== prevState.city){
-        console.log('im working')
         nextProps.fetchListings(nextProps.match.params.city)
-        
       } 
       return {
         listings: nextProps.listings,
