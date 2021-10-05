@@ -66,7 +66,7 @@ class ListingIndex extends React.Component {
           <br />
           {msg}
         </ul>
-        <MapConatiner />
+        <MapConatiner city={this.state.city}/>
       </div>
     );
   }
