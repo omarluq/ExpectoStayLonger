@@ -586,14 +586,14 @@
 .social{
     display: flex;
     flex-direction: column;  
-    justify-content: space-between; 
+    gap: 15px;
     height: 250px;
 }
 
 .otherprojection{
     display: flex;
     flex-direction: column;  
-    justify-content: space-between; 
+    gap: 15px;
     height: 70px;
 }
 
@@ -601,7 +601,7 @@
 .contact{
     display: flex;
     flex-direction: column;  
-    justify-content: space-between; 
+    gap: 15px;
 
 }
 

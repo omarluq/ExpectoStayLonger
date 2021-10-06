@@ -41,7 +41,7 @@ const Footer = () => {
       </div>
 
       <div className="otherprojection">
-        <h4>My other projects</h4>
+        <h4>Other projects</h4>
         <a
           className="footerlink"
           href="https://omarluq.github.io/CyberWars/"
@@ -49,15 +49,20 @@ const Footer = () => {
         >
           Cyberwars
         </a>
+        <a
+          className="footerlink"
+          href="https://cryptogalaxy.herokuapp.com/#/"
+          target="_blank"
+        >
+          Crypto Galaxy
+        </a>
+        <a className="footerlink" href="https://omarluq.github.io/portfolio/" target="_blank">Portfolio</a>
       </div>
 
       <div className="contact">
-        <h4>Reach me at</h4>
-        <h5>Email:</h5>
-        <p className="footerp">omaralanii@outlook.com</p>
-        <h5>Mobile:</h5>
-        <p className="footerp">(480) 352-4966</p>
-        <h5></h5>
+        <h4>Get in touch</h4>
+        <h5>Email: <p className="footerp">omaralanii@outlook.com</p></h5>
+        <h5>Mobile: <p className="footerp">(480) 352-4966</p></h5>
       </div>
     </div>
   );
