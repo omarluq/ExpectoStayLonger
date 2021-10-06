@@ -58,25 +58,28 @@ class NewListing extends React.Component {
           formData.append("listing[owl_friendly]", this.state.owl_friendly);
           formData.append("listing[longitude]", this.state.longitude);
           formData.append("listing[latitude]", this.state.latitude);
+          if (this.state.photos.length !== 0){
           for (let i = 0; i < this.state.photos.length; i++) {
-            formData.append("listing[photos][]", this.state.photos[i]);
+            formData.append("listing[photos][]", this.state.photos[i])};
+            this.props.createListing(formData).then(
+              (res) => {
+                this.props.closeSpinner();
+                this.props.history.replace(`/listing/${res.listing.id}`);
+              },
+              (err) => {
+                this.props.closeSpinner();
+                this.errors = (
+                  <p>
+                    Something went wrong! please make sure to fill all fields
+                    proprley.
+                  </p>
+                );
+                this.forceUpdate();
+              }
+            );
+          } else{
+            this.noPhotos()
           }
-          this.props.createListing(formData).then(
-            (res) => {
-              this.props.closeSpinner();
-              this.props.history.replace(`/listing/${res.listing.id}`);
-            },
-            (err) => {
-              this.props.closeSpinner();
-              this.errors = (
-                <p>
-                  Something went wrong! please make sure to fill all fields
-                  proprley.
-                </p>
-              );
-              this.forceUpdate();
-            }
-          );
         } else {
           this.wrongAddress();
         }
@@ -88,6 +91,16 @@ class NewListing extends React.Component {
     this.errors = (
       <p>
         The Address you have entered is invalid! please enter a valid address
+      </p>
+    );
+    this.forceUpdate();
+  }
+
+  noPhotos(){
+    this.props.closeSpinner();
+    this.errors = (
+      <p>
+        At Least one picture is needed to add a new listing
       </p>
     );
     this.forceUpdate();
