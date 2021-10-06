@@ -45,7 +45,7 @@ class Review extends React.Component {
     if (this.toggleview === "show") {
       show = (
         <li className="reviewitem">
-          <div>
+          <div className="reviewdiv">
             <h4 className="reviewer">{this.state.author}</h4>
             <br />
             <p>Gave a rating of: {this.state.rating}</p>

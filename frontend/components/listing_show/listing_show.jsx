@@ -106,10 +106,13 @@ class ListingShow extends React.Component {
         <div className="reviewscontainer">
           {createReview}
           <br />
+          <div className="reviewlistcontainer">
+            <h4 className="reviewstitle">{this.props.listing.reviews.length} reviews</h4>
+            <br />
           <ul className="reviews">
-            <h4 className="reviewstitle">All reviews</h4>
             {reviews}
           </ul>
+          </div>
         </div>
       </div>
     );

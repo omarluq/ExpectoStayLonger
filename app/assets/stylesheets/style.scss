@@ -882,17 +882,28 @@
 }
 
 .reviews{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // flex-direction: column;
     border: 1px solid black;
     border-radius: 25px;
     padding: 20px;
-    width: 40%;
-    max-width: 50%;
-    gap: 10px;
+    width: 70%;
+    // align-self: center;
+    place-self: center;
+    // max-width: 50%;
     box-shadow: 0 3px 20px rgba(0,0,0 , 0.5);
     margin-bottom: 40px;
 }
+
+// .reviewlistcontainer{
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     width: 125%;
+// }
+
 
 .reviewbody{
     border-radius: 25px;
@@ -908,15 +919,18 @@
 .reviewstitle{
     font-size: 25px;
     padding: 10px;
-    border-bottom: 1px solid black;
+    // border-bottom: 1px solid black;
 }
 
 .reviewitem{
-    border-bottom: 1px solid black;
+    // border-bottom: 1px solid black;
     margin-bottom: 20px;
     padding: 15px;
+    max-width: 300px;
+    word-wrap: break-word;
 
 }
+
 
 .reviewer{
     font-size: 20px;
@@ -972,4 +986,5 @@
 .msg{
     align-self: center;
 }
+
 
