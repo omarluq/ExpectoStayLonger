@@ -41,7 +41,6 @@ class ListingIndex extends React.Component {
     }
 
   render() {
-    console.log(this.state.listings);
     let msg;
     if (!this.state.listings.length) {
       msg = (
