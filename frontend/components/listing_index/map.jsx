@@ -20,7 +20,7 @@ class Map extends React.Component {
     return {
       listings: nextProps.listings,
       city: nextProps.match.params.city,
-    }
+    };
   }
 
   componentDidMount() {
@@ -38,42 +38,43 @@ class Map extends React.Component {
   }
 
   componentDidUpdate() {
-    this.markers.forEach(marker=> {
-      marker.remove()
-    })
-    this.markers = []
-      let marker;
-     this.state.listings.forEach((listing) => {
-      marker =  new mapboxgl.Marker({ color: "teal" })
+    this.markers.forEach((marker) => {
+      marker.remove();
+    });
+    this.markers = [];
+    let marker;
+    this.state.listings.forEach((listing) => {
+      marker = new mapboxgl.Marker({ color: "teal" })
         .setLngLat([listing.longitude, listing.latitude])
         .addTo(this.map)
         .setPopup(new mapboxgl.Popup().setHTML(this.marker(listing)));
-        this.markers.push(marker)
-    })
-    if(this.state.city !== 'all'){
-      mapboxgl.accessToken =
-      "pk.eyJ1Ijoib21hcmx1cSIsImEiOiJja3RhOGt0N3UxanE2MnduMWNsNW9lMXdnIn0.EmKLSdfjJDUYIIW8wieFLw";
-    const geocoder = mbxGeocoding({
-      accessToken: mapboxgl.accessToken,
+      this.markers.push(marker);
     });
+    if (this.state.city !== "all") {
+      mapboxgl.accessToken =
+        "pk.eyJ1Ijoib21hcmx1cSIsImEiOiJja3RhOGt0N3UxanE2MnduMWNsNW9lMXdnIn0.EmKLSdfjJDUYIIW8wieFLw";
+      const geocoder = mbxGeocoding({
+        accessToken: mapboxgl.accessToken,
+      });
 
-    geocoder
-      .forwardGeocode({
-        query: this.state.city,
-        limit: 1,
-      })
-      .send()
-      .then((response) => {
-        this.map.flyTo({center: [response.body.features[0].center[0], response.body.features[0].center[1]]})
-      })
-    } else{
-      this.map.flyTo({center: [0.1278, 51.5074]})
+      geocoder
+        .forwardGeocode({
+          query: this.state.city,
+          limit: 1,
+        })
+        .send()
+        .then((response) => {
+          this.map.flyTo({
+            center: [
+              response.body.features[0].center[0],
+              response.body.features[0].center[1],
+            ],
+          });
+        });
+    } else {
+      this.map.flyTo({ center: [0.1278, 51.5074] });
     }
   }
-
-  // componentWillUnmount() {
-    
-  // }
 
   marker(listing) {
     return `<div> 
@@ -88,7 +89,7 @@ class Map extends React.Component {
   }
 
   render() {
-    return <div id="mapContainer"></div>
+    return <div id="mapContainer"></div>;
   }
 }
 

@@ -7,7 +7,7 @@ class NewListing extends React.Component {
   constructor(props) {
     super(props);
     this.state = this.props.listing;
-    this.errors = null 
+    this.errors = null;
   }
 
   handleChange(field) {
@@ -39,55 +39,64 @@ class NewListing extends React.Component {
       .send()
       .then((response) => {
         this.setState({ host_id: this.props.session.id });
-        if (response.body.features.length > 0 ){
-        this.setState({
-          longitude: response.body.features[0].center[0],
-          latitude: response.body.features[0].center[1],
-        })
-        const formData = new FormData();
-        formData.append("listing[host_id]", this.state.host_id);
-        formData.append("listing[title]", this.state.title);
-        formData.append("listing[description]", this.state.description);
-        formData.append("listing[street_address]", this.state.street_address);
-        formData.append("listing[city]", this.state.city);
-        formData.append("listing[country]", this.state.country);
-        formData.append("listing[postcode]", this.state.postcode);
-        formData.append("listing[price]", this.state.price);
-        formData.append("listing[num_of_beds]", this.state.num_of_beds);
-        formData.append("listing[house_elf]", this.state.house_elf);
-        formData.append("listing[owl_friendly]", this.state.owl_friendly);
-        formData.append("listing[longitude]", this.state.longitude);
-        formData.append("listing[latitude]", this.state.latitude);
-        for (let i = 0; i < this.state.photos.length; i++) {
-          formData.append("listing[photos][]", this.state.photos[i]);
-        }
-        this.props.createListing(formData).then((res) => {
-          
-          this.props.closeSpinner()
-          this.props.history.replace(`/listing/${res.listing.id}`);
-          
-        }, err => {
-          this.props.closeSpinner()
-          this.errors = <p>Something went wrong! please make sure to fill all fields proprley.</p>
-          this.forceUpdate()
-        })} else {
-          this.wrongAddress()
+        if (response.body.features.length > 0) {
+          this.setState({
+            longitude: response.body.features[0].center[0],
+            latitude: response.body.features[0].center[1],
+          });
+          const formData = new FormData();
+          formData.append("listing[host_id]", this.state.host_id);
+          formData.append("listing[title]", this.state.title);
+          formData.append("listing[description]", this.state.description);
+          formData.append("listing[street_address]", this.state.street_address);
+          formData.append("listing[city]", this.state.city);
+          formData.append("listing[country]", this.state.country);
+          formData.append("listing[postcode]", this.state.postcode);
+          formData.append("listing[price]", this.state.price);
+          formData.append("listing[num_of_beds]", this.state.num_of_beds);
+          formData.append("listing[house_elf]", this.state.house_elf);
+          formData.append("listing[owl_friendly]", this.state.owl_friendly);
+          formData.append("listing[longitude]", this.state.longitude);
+          formData.append("listing[latitude]", this.state.latitude);
+          for (let i = 0; i < this.state.photos.length; i++) {
+            formData.append("listing[photos][]", this.state.photos[i]);
+          }
+          this.props.createListing(formData).then(
+            (res) => {
+              this.props.closeSpinner();
+              this.props.history.replace(`/listing/${res.listing.id}`);
+            },
+            (err) => {
+              this.props.closeSpinner();
+              this.errors = (
+                <p>
+                  Something went wrong! please make sure to fill all fields
+                  proprley.
+                </p>
+              );
+              this.forceUpdate();
+            }
+          );
+        } else {
+          this.wrongAddress();
         }
       });
   }
 
-  wrongAddress(){
-    this.props.closeSpinner()
-    this.errors = <p>The Address you have entered is invalid! please enter a valid address</p>
-    this.forceUpdate()
+  wrongAddress() {
+    this.props.closeSpinner();
+    this.errors = (
+      <p>
+        The Address you have entered is invalid! please enter a valid address
+      </p>
+    );
+    this.forceUpdate();
   }
-
-
 
   render() {
     return (
       <div className="new-listing-div">
-         <Modal />
+        <Modal />
         <form className="newlistingform" onSubmit={(e) => this.handleSubmit(e)}>
           <br />
           <h4>Hey! Listing a new Magical place?</h4>

@@ -10,35 +10,21 @@ class ListingIndex extends React.Component {
       listings: this.props.listings,
       city: this.props.match.params.city,
     };
-    // city: 'all'
   }
 
   componentDidMount() {
-    this.props.fetchListings(this.state.city)
+    this.props.fetchListings(this.state.city);
   }
 
-  // componentDidUpdate(nextProps) {
-  //   // console.log(this.state.city);
-  //   if (nextProps.match.params.city !== this.props.match.params.city) {
-  //     console.log(nextProps.match.params.city);
-  //     console.log(this.props.match.params.city);
-  //     this.props.fetchListings(nextProps.match.params.city);
-  //     // this.forceUpdate()
-  //     this.setState({city: nextProps.match.params.city})
-  //   }
-  // }
-
-
   static getDerivedStateFromProps(nextProps, prevState) {
-    
-      if( nextProps.match.params.city !== prevState.city){
-        nextProps.fetchListings(nextProps.match.params.city)
-      } 
-      return {
-        listings: nextProps.listings,
-        city: nextProps.match.params.city,
-      } 
+    if (nextProps.match.params.city !== prevState.city) {
+      nextProps.fetchListings(nextProps.match.params.city);
     }
+    return {
+      listings: nextProps.listings,
+      city: nextProps.match.params.city,
+    };
+  }
 
   render() {
     let msg;
