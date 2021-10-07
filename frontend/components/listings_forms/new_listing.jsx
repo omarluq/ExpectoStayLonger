@@ -60,7 +60,7 @@ class NewListing extends React.Component {
           formData.append("listing[owl_friendly]", this.state.owl_friendly);
           formData.append("listing[longitude]", this.state.longitude);
           formData.append("listing[latitude]", this.state.latitude);
-          if (this.state.photos.length !== 0) {
+          if (this.state.photos.length === 4) {
             for (let i = 0; i < this.state.photos.length; i++) {
               formData.append("listing[photos][]", this.state.photos[i]);
             }
@@ -103,7 +103,7 @@ class NewListing extends React.Component {
     this.props.closeSpinner();
     this.errors = (
       <p className="errors">
-        At Least one picture is needed to add a new listing
+        Please Upload 4 picutes to this listing
       </p>
     );
     this.forceUpdate();
