@@ -8,6 +8,7 @@ class NewListing extends React.Component {
     super(props);
     this.state = this.props.listing;
     this.errors = null;
+
   }
 
   handleChange(field) {
@@ -58,9 +59,10 @@ class NewListing extends React.Component {
           formData.append("listing[owl_friendly]", this.state.owl_friendly);
           formData.append("listing[longitude]", this.state.longitude);
           formData.append("listing[latitude]", this.state.latitude);
-          if (this.state.photos.length !== 0){
-          for (let i = 0; i < this.state.photos.length; i++) {
-            formData.append("listing[photos][]", this.state.photos[i])};
+          if (this.state.photos.length !== 0) {
+            for (let i = 0; i < this.state.photos.length; i++) {
+              formData.append("listing[photos][]", this.state.photos[i]);
+            }
             this.props.createListing(formData).then(
               (res) => {
                 this.props.closeSpinner();
@@ -69,7 +71,7 @@ class NewListing extends React.Component {
               (err) => {
                 this.props.closeSpinner();
                 this.errors = (
-                  <p className='errors'>
+                  <p className="errors">
                     Something went wrong! please make sure to fill all fields
                     proprley.
                   </p>
@@ -77,8 +79,8 @@ class NewListing extends React.Component {
                 this.forceUpdate();
               }
             );
-          } else{
-            this.noPhotos()
+          } else {
+            this.noPhotos();
           }
         } else {
           this.wrongAddress();
@@ -89,24 +91,27 @@ class NewListing extends React.Component {
   wrongAddress() {
     this.props.closeSpinner();
     this.errors = (
-      <p className='errors'>
+      <p className="errors">
         The Address you have entered is invalid! please enter a valid address
       </p>
     );
     this.forceUpdate();
   }
 
-  noPhotos(){
+  noPhotos() {
     this.props.closeSpinner();
     this.errors = (
-      <p className='errors'>
+      <p className="errors">
         At Least one picture is needed to add a new listing
       </p>
     );
     this.forceUpdate();
   }
 
+
   render() {
+   
+    
     return (
       <div className="new-listing-div">
         <Modal />
@@ -215,7 +220,6 @@ class NewListing extends React.Component {
           {this.errors}
         </form>
         <div className="snape"></div>
-        {/* <button onClick={()=>this.props.spinner()}></button> */}
       </div>
     );
   }

@@ -20,8 +20,8 @@ const mapSTP = (state) => ({
     house_elf: "false",
     owl_friendly: "false",
     photos: [],
-    photoUrl: null,
-    photoFile: null,
+    photoUrls: [],
+    photoFiles: [],
   },
   session: state.session,
 });
