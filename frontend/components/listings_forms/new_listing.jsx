@@ -114,7 +114,7 @@ class NewListing extends React.Component {
     for(let i =0; i < e.target.files.length; i ++){
       this.urls.push(URL.createObjectURL(e.target.files[i]))
     }
-    this.setState({ photos: e.target.files })
+    this.setState({ photos: [...e.target.files, ...this.state.photos ]})
   }
 
   removeImage(){
