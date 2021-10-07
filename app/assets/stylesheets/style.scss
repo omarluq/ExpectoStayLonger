@@ -386,6 +386,7 @@
         border-radius: 25px;
         box-shadow: 0 3px 20px rgba(0,0,0 , 1);
         width: 400px;
+        min-width: 400px;
     }
 
     .newformlabel{
@@ -421,13 +422,20 @@
     }
 
 
-
-    .usershow {
-        display: flex; 
-        flex-direction: row;  
-        margin: 100px;
+    @media (min-width: 1200px) {
+        .usershow {
+            display: flex; 
+            flex-direction: row;  
+            margin: 100px;
+        }
     }
 
+
+    // .usershow {
+    //     display: flex; 
+    //     flex-direction: column;  
+    //     margin: 100px;
+    // }
 
     .userlistings {
         display: flex;
@@ -1011,7 +1019,6 @@
 
 .imgpreviewwrapper{
     display: grid;
-    // grid-template-rows: (2) ;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
 }
