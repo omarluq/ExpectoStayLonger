@@ -13,9 +13,11 @@ const mapSTP = (state, ownProps) => {
       guest_id: state.session.id,
       listing_id: ownProps.match.params.listingId,
       total_price: 0,
+      num_of_guests: null
     },
     listingPrice: state.listings[ownProps.match.params.listingId].price,
     bloackedDates: state.listings[ownProps.match.params.listingId].reservations,
+    num_of_beds: state.listings[ownProps.match.params.listingId].num_of_beds
   };
 };
 const mapDTP = (dispatch) => ({

@@ -35,7 +35,7 @@ class ListingShow extends React.Component {
       );
       createReview = <div></div>;
     } else {
-      deleteButton = <CreateReservationConatiner />;
+      deleteButton = <CreateReservationConatiner refresh={this.refersh.bind(this)}  />;
       createReview = <CreateReviewContainer refresh={this.refersh.bind(this)} />;
     }
     if (!this.props.session.id){

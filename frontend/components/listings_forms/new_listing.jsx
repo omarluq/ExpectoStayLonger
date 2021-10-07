@@ -69,7 +69,7 @@ class NewListing extends React.Component {
               (err) => {
                 this.props.closeSpinner();
                 this.errors = (
-                  <p>
+                  <p className='errors'>
                     Something went wrong! please make sure to fill all fields
                     proprley.
                   </p>
@@ -89,7 +89,7 @@ class NewListing extends React.Component {
   wrongAddress() {
     this.props.closeSpinner();
     this.errors = (
-      <p>
+      <p className='errors'>
         The Address you have entered is invalid! please enter a valid address
       </p>
     );
@@ -99,7 +99,7 @@ class NewListing extends React.Component {
   noPhotos(){
     this.props.closeSpinner();
     this.errors = (
-      <p>
+      <p className='errors'>
         At Least one picture is needed to add a new listing
       </p>
     );

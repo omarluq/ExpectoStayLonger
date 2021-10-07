@@ -10,6 +10,7 @@ class CreateReservation extends React.Component {
     this.state = this.props.reservation;
     this.dateRange = [];
     this.setDateRange();
+    this.numofguestError;
   }
 
   setDateRange() {
@@ -31,12 +32,29 @@ class CreateReservation extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if (this.state.guest_id) {
-      this.props
-        .createReservation(this.state)
-        .then((res) => this.redirect(res));
+      if (
+        this.state.num_of_guests &&
+        this.state.num_of_guests <= this.props.num_of_beds * 2
+      ) {
+        this.props
+          .createReservation(this.state)
+          .then((res) => this.redirect(res));
+      } else {
+        this.guestError()
+      }
     } else {
       this.props.openModal();
     }
+  }
+
+  guestError() {
+    this.numofguestError = (
+      <p className='errors'>
+        Please make sure to input the number of guests! maximum{" "}
+        {this.props.num_of_beds * 2}
+      </p>
+    );
+    this.forceUpdate()
   }
 
   redirect(res) {
@@ -61,6 +79,11 @@ class CreateReservation extends React.Component {
     this.setState({ ["start_date"]: startDate, ["end_date"]: endDate }, () =>
       this.setTotalPrice()
     );
+  }
+
+  handleGuests(e) {
+    e.preventDefault();
+    this.setState({ num_of_guests: e.target.value });
   }
 
   render() {
@@ -89,6 +112,12 @@ class CreateReservation extends React.Component {
       <form onSubmit={(e) => this.handleSubmit(e)} className="resForm">
         <h4>Book this magical placr</h4>
         <br />
+        <label className='num-guests'>
+          {" "}
+          Number of guests
+          <br />
+          <input className='guest-input' type="number" onChange={(e) => this.handleGuests(e)} />
+        </label>
         <div className="resDates">
           <DateRange
             ranges={[selectionRange]}
@@ -112,6 +141,8 @@ class CreateReservation extends React.Component {
         </div>
         <br />
         <button className="resButton">Reserve</button>
+        <br />
+        {this.numofguestError}
       </form>
     );
   }
