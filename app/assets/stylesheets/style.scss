@@ -1009,3 +1009,15 @@
 }
 
 
+.imgpreviewwrapper{
+    display: grid;
+    // grid-template-rows: (2) ;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.img-preview{
+    border-radius: 25px;
+}
+
+

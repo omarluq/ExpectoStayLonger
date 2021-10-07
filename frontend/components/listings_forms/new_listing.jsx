@@ -8,6 +8,7 @@ class NewListing extends React.Component {
     super(props);
     this.state = this.props.listing;
     this.errors = null;
+    this.urls = []
 
   }
 
@@ -108,10 +109,22 @@ class NewListing extends React.Component {
     this.forceUpdate();
   }
 
+  uploadPhotos(e){
+
+    for(let i =0; i < e.target.files.length; i ++){
+      this.urls.push(URL.createObjectURL(e.target.files[i]))
+    }
+    this.setState({ photos: e.target.files })
+  }
+
+  removeImage(){
+    this.setState({ photos: [] })
+    this.urls = []
+  }
+
 
   render() {
    
-    
     return (
       <div className="new-listing-div">
         <Modal />
@@ -210,10 +223,19 @@ class NewListing extends React.Component {
             <input
               className="fileinput"
               type="file"
-              onChange={(e) => this.setState({ photos: e.target.files })}
+              onChange={(e) => this.uploadPhotos(e)}
               multiple
             />
           </label>
+          <br />
+          <div className='imgpreviewwrapper'>
+          {this.urls.map(url => (
+                        <img className='img-preview' src={url} alt="..." width='150px' height="150px"/>
+                    ))}
+          
+          </div>
+          <br />
+          {this.urls.length !== 0 ? <button className="newformbutton" onClick={()=> this.removeImage()}>Remove Images</button> : null}
           <br />
           <button className="newformbutton">Finish</button>
           <br />
