@@ -105,7 +105,7 @@ class NewListing extends React.Component {
     this.props.closeSpinner();
     this.errors = (
       <p className="errors">
-        Listings must have 1 picture at least to be added, maximum 4 pictures
+        Listings must have 1 picture at least to be added, maximum 4 pictures.
       </p>
     );
     this.forceUpdate();
@@ -116,7 +116,7 @@ class NewListing extends React.Component {
     this.props.closeSpinner();
     this.errors = (
       <p className="errors">
-        Listings must have 1 picture at least to be added, maximum 4 pictures
+        exceeded maximum amount of pictures, please make sure you have or 4 or less.
       </p>
     );
     this.forceUpdate();
