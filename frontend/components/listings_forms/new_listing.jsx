@@ -116,7 +116,7 @@ class NewListing extends React.Component {
     this.props.closeSpinner();
     this.errors = (
       <p className="errors">
-        exceeded maximum amount of pictures, please make sure you have or 4 or less.
+        exceeded maximum amount of pictures, please make sure you have 4 pictures or less.
       </p>
     );
     this.forceUpdate();
