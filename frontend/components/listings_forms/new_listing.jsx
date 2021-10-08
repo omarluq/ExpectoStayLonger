@@ -60,7 +60,7 @@ class NewListing extends React.Component {
           formData.append("listing[owl_friendly]", this.state.owl_friendly);
           formData.append("listing[longitude]", this.state.longitude);
           formData.append("listing[latitude]", this.state.latitude);
-          if (this.state.photos.length === 4) {
+          if (this.state.photos.length > 0 && this.state.photos.length < 5) {
             for (let i = 0; i < this.state.photos.length; i++) {
               formData.append("listing[photos][]", this.state.photos[i]);
             }
@@ -80,8 +80,10 @@ class NewListing extends React.Component {
                 this.forceUpdate();
               }
             );
-          } else {
+          } else if (this.state.photos.length === 0 ) {
             this.noPhotos();
+          } else if (this.state.photos.length > 4) {
+            this.tooManyPhotos()
           }
         } else {
           this.wrongAddress();
@@ -103,7 +105,18 @@ class NewListing extends React.Component {
     this.props.closeSpinner();
     this.errors = (
       <p className="errors">
-        Please Upload 4 picutes to this listing
+        Listings must have 1 picture at least to be added, maximum 4 pictures
+      </p>
+    );
+    this.forceUpdate();
+  }
+
+
+  tooManyPhotos() {
+    this.props.closeSpinner();
+    this.errors = (
+      <p className="errors">
+        Listings must have 1 picture at least to be added, maximum 4 pictures
       </p>
     );
     this.forceUpdate();
