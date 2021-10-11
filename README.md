@@ -43,10 +43,21 @@
 
 ## Development
   We made sure that a listing can only be booked on available dates by blocking the reserved ones, the below code shows you how we did that 
-  
-  <p align="center">
-   <img src="https://github.com/omarluq/ExpectoStayLonger/blob/main/app/assets/images/screenshot6.png" />
-  </p>
+  ``` Javascript 
+      setDateRange() {
+    let that = this;
+    this.props.bloackedDates.forEach((range) => {
+      let start = new Date(range[0]);
+      let end = new Date(range[1]);
+      let diff = (end.getTime() - start.getTime()) / (1000 * 3600 * 24);
+      for (let i = 0; i <= diff; i++) {
+        let temp = `${start.getFullYear()}/${start.getMonth() + 1}/${start.getDate() + 1}`;
+        that.dateRange.push(start);
+        start = new Date(temp);
+      }
+    });
+  }
+  ```
 
 ## found a 🐛 ?
  Feel free to file a new issue with a respective title and description on ExpectoStatyLonger repository.
